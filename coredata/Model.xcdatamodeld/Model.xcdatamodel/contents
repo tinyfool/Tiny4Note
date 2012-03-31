@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="11C62" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="createtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatetime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="noteBook" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="NoteBook" syncable="YES"/>
+    </entity>
+    <entity name="NoteBook" representedClassName="NoteBook" syncable="YES">
+        <attribute name="createtime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Note" positionX="189" positionY="198" width="117" height="105"/>
+        <element name="NoteBook" positionX="-101" positionY="54" width="128" height="90"/>
+    </elements>
+</model>

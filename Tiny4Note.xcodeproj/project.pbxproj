@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1500D35B12810D5700F2C0F9 /* todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1500D35A12810D5700F2C0F9 /* todo.m */; };
+		1500D3C9128134FF00F2C0F9 /* input.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D3C7128134FF00F2C0F9 /* input.png */; };
+		1500D3CA128134FF00F2C0F9 /* input0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D3C8128134FF00F2C0F9 /* input0.png */; };
+		15154B6F120E7E0A0087A877 /* TNWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154B6E120E7E0A0087A877 /* TNWord.m */; };
+		15154C38120E905A0087A877 /* GWLPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154C37120E905A0087A877 /* GWLPage.m */; };
+		155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CA1346CA7F00F2322F /* GWLRun.m */; };
+		155E19CF1346CA7F00F2322F /* GWLPostion.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CC1346CA7F00F2322F /* GWLPostion.m */; };
+		15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */; };
+		15D60985120A7F49006D2D77 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D60984120A7F49006D2D77 /* back1.png */; };
+		15D60996120A830F006D2D77 /* TNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D60995120A830F006D2D77 /* TNNoteView.m */; };
+		1D3623260D0F684500981E51 /* Tiny4NoteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Tiny4NoteAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* MainViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MainViewController.m */; };
+		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
+		BD438F7C14A6699100060338 /* NoteBook.m in Sources */ = {isa = PBXBuildFile; fileRef = BD438F7B14A6699100060338 /* NoteBook.m */; };
+		BD438F7F14A6699200060338 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BD438F7E14A6699200060338 /* Note.m */; };
+		BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BD438F8C14A675EA00060338 /* popoverbackground.png */; };
+		BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */; };
+		BD8AC79614A63DA800E65AA7 /* NoteBookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC79414A63DA800E65AA7 /* NoteBookTableViewController.m */; };
+		BD8AC7A014A65B3600E65AA7 /* Tiny4NotePopoverBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC79F14A65B3500E65AA7 /* Tiny4NotePopoverBackgroundView.m */; };
+		BD8AC7A314A6657200E65AA7 /* NoteTableVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC7A214A6657100E65AA7 /* NoteTableVIewController.m */; };
+		BDBEAA15133D7F0B001623A0 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBEAA14133D7F0B001623A0 /* toolbar.png */; };
+		BDBEAA21133D8568001623A0 /* ImageBackgroundNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAA20133D8568001623A0 /* ImageBackgroundNavigationBar.m */; };
+		BDD5BE04127FF48500EF852B /* sf.png in Resources */ = {isa = PBXBuildFile; fileRef = BDD5BE03127FF48500EF852B /* sf.png */; };
+		BDDBEEE614A60F67008FD0BE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEE514A60F67008FD0BE /* libMobClickLibrary.a */; };
+		BDDBEEEA14A60F8D008FD0BE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEE914A60F8D008FD0BE /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BDDBEEEC14A60FB2008FD0BE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEEB14A60FB2008FD0BE /* libz.dylib */; };
+		BDDBEEEE14A60FC0008FD0BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEED14A60FC0008FD0BE /* SystemConfiguration.framework */; };
+		BDDBEEF014A60FCC008FD0BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEEF14A60FCC008FD0BE /* QuartzCore.framework */; };
+		BDDBEEF514A62F3F008FD0BE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEF414A62F3F008FD0BE /* CoreData.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1500D35A12810D5700F2C0F9 /* todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = todo.m; path = doc/todo.m; sourceTree = "<group>"; };
+		1500D3C7128134FF00F2C0F9 /* input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input.png; sourceTree = "<group>"; };
+		1500D3C8128134FF00F2C0F9 /* input0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input0.png; sourceTree = "<group>"; };
+		15154B6D120E7E0A0087A877 /* TNWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNWord.h; path = Classes/TNWord.h; sourceTree = "<group>"; };
+		15154B6E120E7E0A0087A877 /* TNWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNWord.m; path = Classes/TNWord.m; sourceTree = "<group>"; };
+		15154C36120E905A0087A877 /* GWLPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLPage.h; path = Classes/GWLPage.h; sourceTree = "<group>"; };
+		15154C37120E905A0087A877 /* GWLPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLPage.m; path = Classes/GWLPage.m; sourceTree = "<group>"; };
+		155E19CA1346CA7F00F2322F /* GWLRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLRun.m; path = Classes/GWLRun.m; sourceTree = "<group>"; };
+		155E19CB1346CA7F00F2322F /* GWLRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLRun.h; path = Classes/GWLRun.h; sourceTree = "<group>"; };
+		155E19CC1346CA7F00F2322F /* GWLPostion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLPostion.m; path = Classes/GWLPostion.m; sourceTree = "<group>"; };
+		155E19CD1346CA7F00F2322F /* GWLPostion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLPostion.h; path = Classes/GWLPostion.h; sourceTree = "<group>"; };
+		155E19D01346CA8800F2322F /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = Classes/common.h; sourceTree = "<group>"; };
+		15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNHandWritingView.m; path = Classes/TNHandWritingView.m; sourceTree = "<group>"; };
+		15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNHandWritingView.h; path = Classes/TNHandWritingView.h; sourceTree = "<group>"; };
+		15D60984120A7F49006D2D77 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
+		15D60994120A830F006D2D77 /* TNNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNNoteView.h; path = Classes/TNNoteView.h; sourceTree = "<group>"; };
+		15D60995120A830F006D2D77 /* TNNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNNoteView.m; path = Classes/TNNoteView.m; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* Tiny4NoteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tiny4NoteAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* Tiny4NoteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tiny4NoteAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Tiny4Note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiny4Note.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Tiny4Note_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tiny4Note_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
+		BD438F7A14A6699100060338 /* NoteBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteBook.h; path = Classes/NoteBook.h; sourceTree = "<group>"; };
+		BD438F7B14A6699100060338 /* NoteBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteBook.m; path = Classes/NoteBook.m; sourceTree = "<group>"; };
+		BD438F7D14A6699200060338 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Classes/Note.h; sourceTree = "<group>"; };
+		BD438F7E14A6699200060338 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Classes/Note.m; sourceTree = "<group>"; };
+		BD438F8C14A675EA00060338 /* popoverbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverbackground.png; sourceTree = "<group>"; };
+		BD8AC79014A639F600E65AA7 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BD8AC79314A63DA800E65AA7 /* NoteBookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteBookTableViewController.h; path = Classes/NoteBookTableViewController.h; sourceTree = "<group>"; };
+		BD8AC79414A63DA800E65AA7 /* NoteBookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteBookTableViewController.m; path = Classes/NoteBookTableViewController.m; sourceTree = "<group>"; };
+		BD8AC79E14A65B3500E65AA7 /* Tiny4NotePopoverBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tiny4NotePopoverBackgroundView.h; path = Classes/Tiny4NotePopoverBackgroundView.h; sourceTree = "<group>"; };
+		BD8AC79F14A65B3500E65AA7 /* Tiny4NotePopoverBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tiny4NotePopoverBackgroundView.m; path = Classes/Tiny4NotePopoverBackgroundView.m; sourceTree = "<group>"; };
+		BD8AC7A114A6657100E65AA7 /* NoteTableVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteTableVIewController.h; path = Classes/NoteTableVIewController.h; sourceTree = "<group>"; };
+		BD8AC7A214A6657100E65AA7 /* NoteTableVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteTableVIewController.m; path = Classes/NoteTableVIewController.m; sourceTree = "<group>"; };
+		BDBEAA14133D7F0B001623A0 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
+		BDBEAA1D133D84F4001623A0 /* ImageBackgroundNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBackgroundNavigationBar.h; path = Classes/ImageBackgroundNavigationBar.h; sourceTree = "<group>"; };
+		BDBEAA20133D8568001623A0 /* ImageBackgroundNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageBackgroundNavigationBar.m; path = Classes/ImageBackgroundNavigationBar.m; sourceTree = "<group>"; };
+		BDD5BE03127FF48500EF852B /* sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sf.png; sourceTree = "<group>"; };
+		BDDBEEE514A60F67008FD0BE /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = youmeng/libMobClickLibrary.a; sourceTree = "<group>"; };
+		BDDBEEE814A60F6F008FD0BE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = youmeng/MobClick.h; sourceTree = "<group>"; };
+		BDDBEEE914A60F8D008FD0BE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BDDBEEEB14A60FB2008FD0BE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BDDBEEED14A60FC0008FD0BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BDDBEEEF14A60FCC008FD0BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BDDBEEF414A62F3F008FD0BE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDDBEEF514A62F3F008FD0BE /* CoreData.framework in Frameworks */,
+				BDDBEEF014A60FCC008FD0BE /* QuartzCore.framework in Frameworks */,
+				BDDBEEEE14A60FC0008FD0BE /* SystemConfiguration.framework in Frameworks */,
+				BDDBEEEC14A60FB2008FD0BE /* libz.dylib in Frameworks */,
+				BDDBEEEA14A60F8D008FD0BE /* CoreTelephony.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				BDDBEEE614A60F67008FD0BE /* libMobClickLibrary.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* Tiny4NoteAppDelegate.h */,
+				1D3623250D0F684500981E51 /* Tiny4NoteAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		1500D35912810D3500F2C0F9 /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				BD3590C112904FC0007B19CD /* 项目文档.pages */,
+				1500D35A12810D5700F2C0F9 /* todo.m */,
+			);
+			name = doc;
+			sourceTree = "<group>";
+		};
+		15154C3F120E90610087A877 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				155E19CA1346CA7F00F2322F /* GWLRun.m */,
+				155E19CB1346CA7F00F2322F /* GWLRun.h */,
+				155E19CC1346CA7F00F2322F /* GWLPostion.m */,
+				155E19CD1346CA7F00F2322F /* GWLPostion.h */,
+				15154C36120E905A0087A877 /* GWLPage.h */,
+				15154C37120E905A0087A877 /* GWLPage.m */,
+				15154B6D120E7E0A0087A877 /* TNWord.h */,
+				15154B6E120E7E0A0087A877 /* TNWord.m */,
+			);
+			name = engine;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Tiny4Note.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				BD8AC79214A63D0900E65AA7 /* UI Classes */,
+				1500D35912810D3500F2C0F9 /* doc */,
+				15154C3F120E90610087A877 /* engine */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				BDBEAA1C133D8439001623A0 /* CustomUI */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */,
+				BD438F7D14A6699200060338 /* Note.h */,
+				BD438F7E14A6699200060338 /* Note.m */,
+				BD438F7A14A6699100060338 /* NoteBook.h */,
+				BD438F7B14A6699100060338 /* NoteBook.m */,
+				BDDBEEE814A60F6F008FD0BE /* MobClick.h */,
+				155E19D01346CA8800F2322F /* common.h */,
+				32CA4F630368D1EE00C91783 /* Tiny4Note_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD438F8C14A675EA00060338 /* popoverbackground.png */,
+				BDBEAA14133D7F0B001623A0 /* toolbar.png */,
+				1500D3C7128134FF00F2C0F9 /* input.png */,
+				1500D3C8128134FF00F2C0F9 /* input0.png */,
+				BDD5BE03127FF48500EF852B /* sf.png */,
+				15D60984120A7F49006D2D77 /* back1.png */,
+				2899E5210DE3E06400AC0155 /* MainViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDDBEEF414A62F3F008FD0BE /* CoreData.framework */,
+				BDDBEEEF14A60FCC008FD0BE /* QuartzCore.framework */,
+				BDDBEEED14A60FC0008FD0BE /* SystemConfiguration.framework */,
+				BDDBEEEB14A60FB2008FD0BE /* libz.dylib */,
+				BDDBEEE914A60F8D008FD0BE /* CoreTelephony.framework */,
+				BDDBEEE514A60F67008FD0BE /* libMobClickLibrary.a */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD8AC79214A63D0900E65AA7 /* UI Classes */ = {
+			isa = PBXGroup;
+			children = (
+				28D7ACF60DDB3853001CB0EB /* MainViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* MainViewController.m */,
+				15D60994120A830F006D2D77 /* TNNoteView.h */,
+				15D60995120A830F006D2D77 /* TNNoteView.m */,
+				15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */,
+				15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */,
+				BD8AC79314A63DA800E65AA7 /* NoteBookTableViewController.h */,
+				BD8AC79414A63DA800E65AA7 /* NoteBookTableViewController.m */,
+				BD8AC79E14A65B3500E65AA7 /* Tiny4NotePopoverBackgroundView.h */,
+				BD8AC79F14A65B3500E65AA7 /* Tiny4NotePopoverBackgroundView.m */,
+				BD8AC7A114A6657100E65AA7 /* NoteTableVIewController.h */,
+				BD8AC7A214A6657100E65AA7 /* NoteTableVIewController.m */,
+			);
+			name = "UI Classes";
+			sourceTree = "<group>";
+		};
+		BDBEAA1C133D8439001623A0 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				BDBEAA1D133D84F4001623A0 /* ImageBackgroundNavigationBar.h */,
+				BDBEAA20133D8568001623A0 /* ImageBackgroundNavigationBar.m */,
+			);
+			name = CustomUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Tiny4Note */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Tiny4Note" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tiny4Note;
+			productName = Tiny4Note;
+			productReference = 1D6058910D05DD3D006BFB54 /* Tiny4Note.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tiny4Note" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Tiny4Note */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* MainViewController.xib in Resources */,
+				15D60985120A7F49006D2D77 /* back1.png in Resources */,
+				BDD5BE04127FF48500EF852B /* sf.png in Resources */,
+				1500D3C9128134FF00F2C0F9 /* input.png in Resources */,
+				1500D3CA128134FF00F2C0F9 /* input0.png in Resources */,
+				BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */,
+				BDBEAA15133D7F0B001623A0 /* toolbar.png in Resources */,
+				BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* Tiny4NoteAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* MainViewController.m in Sources */,
+				15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */,
+				15D60996120A830F006D2D77 /* TNNoteView.m in Sources */,
+				15154B6F120E7E0A0087A877 /* TNWord.m in Sources */,
+				15154C38120E905A0087A877 /* GWLPage.m in Sources */,
+				1500D35B12810D5700F2C0F9 /* todo.m in Sources */,
+				BDBEAA21133D8568001623A0 /* ImageBackgroundNavigationBar.m in Sources */,
+				155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */,
+				155E19CF1346CA7F00F2322F /* GWLPostion.m in Sources */,
+				BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */,
+				BD8AC79614A63DA800E65AA7 /* NoteBookTableViewController.m in Sources */,
+				BD8AC7A014A65B3600E65AA7 /* Tiny4NotePopoverBackgroundView.m in Sources */,
+				BD8AC7A314A6657200E65AA7 /* NoteTableVIewController.m in Sources */,
+				BD438F7C14A6699100060338 /* NoteBook.m in Sources */,
+				BD438F7F14A6699200060338 /* Note.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tiny4Note_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Tiny4Note-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/youmeng\"",
+				);
+				PRODUCT_NAME = Tiny4Note;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Tiny4Note_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "Tiny4Note-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/youmeng\"",
+				);
+				PRODUCT_NAME = Tiny4Note;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hao peiqiang (TGTAME77Z5)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "11461F76-9E8B-43E1-BE1B-18564F46FAC0";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = armv7;
+				"ARCHS[sdk=iphonesimulator*]" = i386;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_OBJCPP_ARC_ABI = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hao peiqiang (TGTAME77Z5)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "872D15F2-4E4E-4F3C-A34B-C855632E69EB";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Tiny4Note" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tiny4Note" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BD8AC79014A639F600E65AA7 /* Model.xcdatamodel */,
+			);
+			currentVersion = BD8AC79014A639F600E65AA7 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = coredata/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
