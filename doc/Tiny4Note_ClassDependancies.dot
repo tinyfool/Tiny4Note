@@ -1,0 +1,38 @@
+digraph G {
+	node [shape=box];
+	"TNWord" -> {};
+	"Note" -> "NoteBook";
+	"TNNoteView" -> "TNWord";
+	"TNNoteView" -> "GWLPage";
+	"GWLPostion" -> {};
+	"TNNoteListView" -> {};
+	"ImageBackgroundNavigationBar" -> {};
+	"MainViewController" -> "TNWord";
+	"MainViewController" -> "Tiny4NotePopoverBackgroundView";
+	"MainViewController" -> "TNNoteView";
+	"MainViewController" -> "NoteBookTableViewController";
+	"MainViewController" -> "ImageBackgroundNavigationBar";
+	"MainViewController" -> "TNHandWritingView";
+	"Tiny4NotePopoverBackgroundView" -> {};
+	"GWLPage" -> "TNWord";
+	"GWLPage" -> "GWLPostion";
+	"GWLPage" -> "GWLRun";
+	"NoteBookTableViewController" -> "Tiny4NoteAppDelegate";
+	"MobClick" -> {};
+	"NoteBook" -> {};
+	"common" -> {};
+	"Tiny4NoteAppDelegate" -> "MobClick";
+	"Tiny4NoteAppDelegate" -> "NoteBook";
+	"Tiny4NoteAppDelegate" -> "MainViewController";
+	"main" -> {};
+	"GWLRun" -> {};
+	"todo" -> {};
+	"TNHandWritingView" -> "TNWord";
+	"NoteTableVIewController" -> {};
+	
+	"Tiny4Note_Prefix" [color=red];
+	"Tiny4Note_Prefix" -> "common" [color=red];
+	
+	edge [color=blue];
+}
+
