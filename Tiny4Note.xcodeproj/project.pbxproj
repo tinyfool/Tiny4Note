@@ -142,10 +142,10 @@
 		15154C3F120E90610087A877 /* engine */ = {
 			isa = PBXGroup;
 			children = (
-				155E19CA1346CA7F00F2322F /* GWLRun.m */,
 				155E19CB1346CA7F00F2322F /* GWLRun.h */,
-				155E19CC1346CA7F00F2322F /* GWLPostion.m */,
+				155E19CA1346CA7F00F2322F /* GWLRun.m */,
 				155E19CD1346CA7F00F2322F /* GWLPostion.h */,
+				155E19CC1346CA7F00F2322F /* GWLPostion.m */,
 				15154C36120E905A0087A877 /* GWLPage.h */,
 				15154C37120E905A0087A877 /* GWLPage.m */,
 				15154B6D120E7E0A0087A877 /* TNWord.h */,
@@ -359,6 +359,7 @@
 				GCC_PREFIX_HEADER = Tiny4Note_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Tiny4Note-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/youmeng\"",
@@ -376,6 +377,7 @@
 				GCC_PREFIX_HEADER = Tiny4Note_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Tiny4Note-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/youmeng\"",
@@ -392,13 +394,13 @@
 				"ARCHS[sdk=iphonesimulator*]" = i386;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hao peiqiang (TGTAME77Z5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "11461F76-9E8B-43E1-BE1B-18564F46FAC0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
