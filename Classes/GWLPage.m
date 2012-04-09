@@ -194,7 +194,7 @@
 		
 		TNWord* word = [words objectAtIndex:i];
 		GWLPostion* pos = [postions objectAtIndex:i];
-		[self drawWord:word atPoint:pos.pos];
+        [word drawAtPoint:pos.pos];
 	}
 	insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
 }
@@ -202,7 +202,7 @@
 -(void)drawLastWord {
     
     //NSLog(@"currentWordId: %d, lastPos: %f,%f",currentWordId,lastPos.x,lastPos.y);
-    [self drawWord:lastWord atPoint:lastPos];
+    [lastWord drawAtPoint:lastPos];
     insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
 }
 
@@ -215,30 +215,4 @@
     return wordFrame;
 }
 
-- (void)drawWord:(TNWord*)word atPoint:(CGPoint)spoint {
-	
-	CGContextRef ctx = UIGraphicsGetCurrentContext();
-//    CGRect wordFrame = CGRectMake(spoint.x +emptySizeX, spoint.y+emptySizeY, word.size.width, word.size.height);
-//    CGContextAddRect(ctx,wordFrame);
-	float yinzi = sizeofword/sizeofboard;
-	for (int i =0 ; i < [word.lines count]; i++) {
-		
-		NSArray* cline = [word.lines objectAtIndex:i];
-		int o = 0;
-		for (int j=0; j<[cline count]; j++) {
-			CGPoint point = [[cline objectAtIndex:j] CGPointValue];
-			float x = emptySizeX + spoint.x + point.x*yinzi;
-			float y = emptySizeY + spoint.y + point.y*yinzi;
-			if (o == 0) {
-				CGContextMoveToPoint(ctx,x,y);
-				if([cline count]==1)
-					CGContextAddLineToPoint(ctx, x, y);
-				o = 1;
-			}else {
-				CGContextAddLineToPoint(ctx, x,y);
-			}
-		}
-	}	
-	CGContextStrokePath(ctx);
-}
 @end

@@ -26,3 +26,7 @@
 @property CGPoint pos;
 @property int wordId;
 @end
+
+@interface TNWord (Drawing)
+- (void)drawAtPoint:(CGPoint)spoint;
+@end;

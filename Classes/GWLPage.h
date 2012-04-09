@@ -36,7 +36,6 @@
 -(void)setWidth:(CGFloat)newWidth;
 -(void)layoutAll;
 -(void)drawAll;
--(void)drawWord:(TNWord*)word atPoint:(CGPoint)spoint;
 -(CGRect)drawAWord:(TNWord*)word;
 -(void)backAWord;
 -(void)touchAtPoint:(CGPoint)point;
