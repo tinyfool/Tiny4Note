@@ -223,15 +223,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		437F5F4A1534047400A0228F /* Hand Writing */ = {
+			isa = PBXGroup;
+			children = (
+				15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */,
+				15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */,
+			);
+			name = "Hand Writing";
+			sourceTree = "<group>";
+		};
+		437F5F4E1534049F00A0228F /* Note View */ = {
+			isa = PBXGroup;
+			children = (
+				15D60994120A830F006D2D77 /* TNNoteView.h */,
+				15D60995120A830F006D2D77 /* TNNoteView.m */,
+			);
+			name = "Note View";
+			sourceTree = "<group>";
+		};
 		BD8AC79214A63D0900E65AA7 /* UI Classes */ = {
 			isa = PBXGroup;
 			children = (
 				28D7ACF60DDB3853001CB0EB /* MainViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* MainViewController.m */,
-				15D60994120A830F006D2D77 /* TNNoteView.h */,
-				15D60995120A830F006D2D77 /* TNNoteView.m */,
-				15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */,
-				15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */,
+				437F5F4E1534049F00A0228F /* Note View */,
+				437F5F4A1534047400A0228F /* Hand Writing */,
 				BD8AC79314A63DA800E65AA7 /* NoteBookTableViewController.h */,
 				BD8AC79414A63DA800E65AA7 /* NoteBookTableViewController.m */,
 				BD8AC79E14A65B3500E65AA7 /* Tiny4NotePopoverBackgroundView.h */,

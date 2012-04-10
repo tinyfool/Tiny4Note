@@ -16,12 +16,11 @@
 @implementation MainViewController
 @synthesize popover;
 
-#pragma mark 事件处理
-
--(void)didStartWriting:(id)sender {
-
+#pragma mark - HandWriting Delegate
+- (void)handWritingViewDidStartWriting:(TNHandWritingView *)handWritingView
+{
 	id word;
-	if ([sender isEqual:writingWin1]) {
+	if ([handWritingView isEqual:writingWin1]) {
 		
 		word = [writingWin2 getCurrentWord];
 	}
@@ -34,11 +33,13 @@
 	}
 }
 
+#pragma mark - 事件处理
+
 //点击输入键
 -(IBAction)buttonInputClick:(id)sender {
 
-	[self didStartWriting:writingWin1];
-	[self didStartWriting:writingWin2];
+	[self handWritingViewDidStartWriting:writingWin1];
+	[self handWritingViewDidStartWriting:writingWin2];
 }
 
 //点击回退键
@@ -50,8 +51,8 @@
 //点击空格键
 -(IBAction)buttonSpaceClick:(id)sender {
 
-	[self didStartWriting:writingWin1];
-	[self didStartWriting:writingWin2];
+	[self handWritingViewDidStartWriting:writingWin1];
+	[self handWritingViewDidStartWriting:writingWin2];
 	TNWord* word = [[TNWord alloc] init];
 	word.size = CGSizeMake(sizeofword, sizeofword);
 	word.wordType = WordTypeSpace;
@@ -61,8 +62,8 @@
 //点击回车键
 -(IBAction)buttonReturnClick:(id)sender {
 
-	[self didStartWriting:writingWin1];
-	[self didStartWriting:writingWin2];
+	[self handWritingViewDidStartWriting:writingWin1];
+	[self handWritingViewDidStartWriting:writingWin2];
 	TNWord* word = [[TNWord alloc] init];
 	word.size = CGSizeMake(sizeofword, sizeofword);
 	word.wordType = WordTypeCrLf;
@@ -101,7 +102,7 @@
 }
 
 
-#pragma mark 标准View处理
+#pragma mark - 标准View处理
 
 /*
  // The designated initializer. Override to perform setup that is required before the view is loaded.

@@ -86,7 +86,7 @@
 	UITouch* touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self];
 	[currentLine addObject:[NSValue valueWithCGPoint:point]];
-	[delegate didStartWriting:self];
+	[delegate handWritingViewDidStartWriting:self];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {

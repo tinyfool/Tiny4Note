@@ -25,6 +25,6 @@
 
 @protocol TDHandWritingViewDeleage
 
--(void)didStartWriting:(id)sender;
+- (void)handWritingViewDidStartWriting:(TNHandWritingView *)handWritingView;
 
 @end
