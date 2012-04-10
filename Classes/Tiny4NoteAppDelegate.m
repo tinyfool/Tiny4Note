@@ -19,8 +19,6 @@
     
     [self initNotebook];
     [MobClick setDelegate:self reportPolicy:BATCH];
-    [window addSubview:viewController.view];
-    [window makeKeyAndVisible];
 	return YES;
 }
 - (void) initNotebook {

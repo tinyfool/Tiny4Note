@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tiny4NoteAppDelegate.h"
 
 int main(int argc, char *argv[]) {
-    
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    return retVal;
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([Tiny4NoteAppDelegate class]));
+    }
 }
