@@ -19,19 +19,17 @@
 	NSMutableArray* paragraphs;
 	CGPoint nextPoint;
     TNWord* lastWord;
-	CGPoint currentPos;
     CGPoint lastPos;
 	int currentRunId;
 	int currentParagraphId;
 	GWLRun* currentRun;
 	NSMutableArray* currentParagraph;
-	UIImageView* insertMark;
-	UIView* parentView;
 	int currentWordId;
     
 }
 
--(void)setParentView:(UIView*)aView;
+@property (nonatomic, unsafe_unretained) CGPoint currentPos;
+
 -(void)setWords:(NSMutableArray*)newWords;
 -(void)setWidth:(CGFloat)newWidth;
 -(void)layoutAll;

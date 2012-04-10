@@ -16,6 +16,8 @@
 	CGContextRef ctx;
 	int addNewWording;
 	GWLPage* page;
+    
+    UIImageView* insertMark;
 }
 
 -(void)initData;

@@ -12,15 +12,27 @@
 
 @implementation TNNoteView
 
-
-
 -(void)initData {
 	
 	words = [[NSMutableArray alloc] initWithCapacity:100];
 	page = [[GWLPage alloc] init];
-	[page setParentView:self];
 	[page setWords:words];
 	[page setWidth:622];
+    
+    
+    insertMark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"input.png"]];
+    insertMark.animationImages = [[NSArray alloc] initWithObjects:
+                                  [UIImage imageNamed:@"input.png"],
+                                  [UIImage imageNamed:@"input0.png"],
+                                  nil
+                                  ];
+    insertMark.animationDuration = 1.5;
+    [insertMark startAnimating];
+    
+    insertMark.frame = CGRectMake(page.currentPos.x+emptySizeX, page.currentPos.y+emptySizeY, 5, 40);
+    [self addSubview:insertMark];
+    
+    [page addObserver:self forKeyPath:@"currentPos" options:0 context:NULL];
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -41,6 +53,17 @@
 	return self;
 }
 
+- (void)dealloc
+{
+    [page removeObserver:self forKeyPath:@"currentPos" context:NULL];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"currentPos"]) {
+        insertMark.frame = CGRectMake(page.currentPos.x+emptySizeX, page.currentPos.y+emptySizeY, 5, 40);        
+    }
+}
 
 - (void)drawRect:(CGRect)rect {
 	
@@ -93,32 +116,3 @@
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

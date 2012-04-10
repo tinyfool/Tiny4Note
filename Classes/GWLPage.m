@@ -12,31 +12,17 @@
 #import "GWLPostion.h"
 
 @implementation GWLPage
+@synthesize currentPos = _currentPos;
 
 -(id)init {
 
 
 	if ((self = [super init])) {
 		
-		insertMark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"input.png"]];
-		insertMark.animationImages = [[NSArray alloc] initWithObjects:
-									  [UIImage imageNamed:@"input.png"],
-									  [UIImage imageNamed:@"input0.png"],
-									  nil
-									  ];
-		insertMark.animationDuration = 1.5;
-		[insertMark startAnimating];
 	}
 	return self;
 }
 
--(void)setParentView:(UIView*)aView {
-
-	parentView = aView;
-	insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
-	[parentView addSubview:insertMark];
-	[parentView bringSubviewToFront:insertMark];
-}
 
 -(void)touchAtPoint:(CGPoint)aPoint {
 
@@ -77,8 +63,7 @@
 					no = k;
 				}
 			}
-			CGPoint insertMarkPoint = [[run.words objectAtIndex:no] pos];
-			insertMark.frame = CGRectMake(insertMarkPoint.x+emptySizeX, insertMarkPoint.y+emptySizeY, 5, 40);
+			self.currentPos = [[run.words objectAtIndex:no] pos];
 			currentWordId = [[run.words objectAtIndex:no] wordId]-1;
 			//NSLog(@"%d",no);
 		}
@@ -103,12 +88,12 @@
 		pos.paragraphId = currentParagraphId;
 		pos.runId = currentRunId;
 		pos.runPosId =0;
-		pos.pos = currentPos;
+		pos.pos = self.currentPos;
 		
 		CGRect wordFrame = CGRectMake(pos.pos.x, pos.pos.y, word.size.width, word.size.height);
 		if (!CGRectContainsRect(currentRun.frame,wordFrame)) {
 			
-			currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, currentPos.y + sizeofword, width, sizeofword)];
+			currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, self.currentPos.y + sizeofword, width, sizeofword)];
 			[currentParagraph addObject:currentRun];
 			currentRunId++;
 			pos.runId = currentRunId;
@@ -117,7 +102,7 @@
 		}
 		word.pos = pos.pos;
 		[currentRun.words addObject:word];
-		currentPos = CGPointMake(pos.pos.x+word.size.width, pos.pos.y);
+		self.currentPos = CGPointMake(pos.pos.x+word.size.width, pos.pos.y);
 		[postions addObject:pos];
         currentWordId++;
         return pos.pos;
@@ -127,29 +112,29 @@
 		currentParagraph = [[NSMutableArray alloc] init];
 		[paragraphs addObject:currentParagraph];
 		
-		currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, currentPos.y + sizeofword, width, sizeofword)];
+		currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, self.currentPos.y + sizeofword, width, sizeofword)];
 		[currentParagraph addObject:currentRun];
 		
 		GWLPostion* pos = [[GWLPostion alloc] init];
 		pos.paragraphId = currentParagraphId;
 		pos.runId = currentRunId;
 		pos.runPosId =0;
-		pos.pos = currentPos;
+		pos.pos = self.currentPos;
 		word.pos = pos.pos;
 		[postions addObject:pos];
 		[currentRun.words addObject:word];
-		currentPos = CGPointMake(0 , currentRun.frame.origin.y);
+		self.currentPos = CGPointMake(0 , currentRun.frame.origin.y);
         currentWordId++;
-        return currentPos;
+        return self.currentPos;
 	}
-    return currentPos;
+    return self.currentPos;
 }
 
 -(void)layoutAll {
 
     //排版单位清零
 	currentWordId = 0;
-	currentPos = CGPointMake(0, 0);
+	self.currentPos = CGPointMake(0, 0);
 	currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, 0, width, sizeofword)];
 	currentRunId = 0;
 	currentParagraph = [[NSMutableArray alloc] init];
@@ -196,14 +181,14 @@
 		GWLPostion* pos = [postions objectAtIndex:i];
         [word drawAtPoint:pos.pos];
 	}
-	insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
+//	insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
 }
 
 -(void)drawLastWord {
     
     //NSLog(@"currentWordId: %d, lastPos: %f,%f",currentWordId,lastPos.x,lastPos.y);
     [lastWord drawAtPoint:lastPos];
-    insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
+//    insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
 }
 
 - (CGRect)drawAWord:(TNWord*)word {
