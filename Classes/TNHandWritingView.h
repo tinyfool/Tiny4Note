@@ -10,21 +10,22 @@
 
 @protocol TDHandWritingViewDeleage;
 
-@interface TNHandWritingView : UIView {
-	
-	NSMutableArray* lines;
-	NSMutableArray* currentLine;
-	id<TDHandWritingViewDeleage> delegate;
-}
+@interface TNHandWritingView : UIView 
 
-@property (nonatomic,retain) id<TDHandWritingViewDeleage> delegate;
+@property (nonatomic, weak) IBOutlet id<TDHandWritingViewDeleage> delegate;
 
--(id)getCurrentWord;
+@property (nonatomic, strong) NSMutableArray *lines;
+@property (nonatomic, strong) NSMutableArray *currentLine;
 
+- (void)clean;
 @end
 
 @protocol TDHandWritingViewDeleage
 
 - (void)handWritingViewDidStartWriting:(TNHandWritingView *)handWritingView;
+
+- (void)handWritingViewDidWriting:(TNHandWritingView *)handWritingView;
+
+- (void)handWritingViewDidEndWriting:(TNHandWritingView *)handWritingView;
 
 @end

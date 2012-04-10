@@ -14,60 +14,41 @@
 #import "Tiny4NotePopoverBackgroundView.h"
 
 @implementation MainViewController
-@synthesize popover;
+@synthesize noteView = _noteView;
+@synthesize nav = _nav;
 
-#pragma mark - HandWriting Delegate
-- (void)handWritingViewDidStartWriting:(TNHandWritingView *)handWritingView
-{
-	id word;
-	if ([handWritingView isEqual:writingWin1]) {
-		
-		word = [writingWin2 getCurrentWord];
-	}
-	else {
-		word = [writingWin1 getCurrentWord];
-	}
-	if (word) {
-		
-		[noteView addNewWord:word];
-	}
-}
+@synthesize popover = _popover;
+@synthesize writingWin1 = _writingWin1;
+@synthesize writingWin2 = _writingWin2;
+@synthesize handWritingController = _handWritingController;
+
+@synthesize toobarButtonChinese = _toobarButtonChinese;
+@synthesize toobarButtonEnglish = _toobarButtonEnglish;
+@synthesize toobarButtonSpace = _toobarButtonSpace;
+@synthesize toobarButtonCRLF = _toobarButtonCRLF;
+
 
 #pragma mark - 事件处理
 
 //点击输入键
 -(IBAction)buttonInputClick:(id)sender {
-
-	[self handWritingViewDidStartWriting:writingWin1];
-	[self handWritingViewDidStartWriting:writingWin2];
+    [self.handWritingController finishWriting];
 }
 
 //点击回退键
 -(IBAction)buttonBackSpaceClick:(id)sender {
 
-	[noteView backAWord];
+	[self.noteView backAWord];
 }
 
 //点击空格键
 -(IBAction)buttonSpaceClick:(id)sender {
-
-	[self handWritingViewDidStartWriting:writingWin1];
-	[self handWritingViewDidStartWriting:writingWin2];
-	TNWord* word = [[TNWord alloc] init];
-	word.size = CGSizeMake(sizeofword, sizeofword);
-	word.wordType = WordTypeSpace;
-	[noteView addNewWord:word];	
+    [self.handWritingController insertSpaceWord];
 }
 
 //点击回车键
 -(IBAction)buttonReturnClick:(id)sender {
-
-	[self handWritingViewDidStartWriting:writingWin1];
-	[self handWritingViewDidStartWriting:writingWin2];
-	TNWord* word = [[TNWord alloc] init];
-	word.size = CGSizeMake(sizeofword, sizeofword);
-	word.wordType = WordTypeCrLf;
-	[noteView addNewWord:word];		
+    [self.handWritingController insertReturnWord];
 }
 
 -(IBAction)showNotes:(id)sender {
@@ -124,24 +105,22 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	
-	writingWin1.delegate = self;
-	writingWin2.delegate = self;
-	writingWin1.layer.cornerRadius= 30.0f;
-	writingWin1.layer.masksToBounds = YES;
-	writingWin1.layer.borderWidth = 1.0;
-	writingWin2.layer.cornerRadius= 30.0f;
-	writingWin2.layer.masksToBounds = YES;
-	writingWin2.layer.borderWidth = 1.0;
-    nav.backgroundImage = [UIImage imageNamed:@"toolbar.png"];
     [super viewDidLoad];
+
+	self.writingWin1.layer.cornerRadius= 30.0f;
+	self.writingWin1.layer.masksToBounds = YES;
+	self.writingWin1.layer.borderWidth = 1.0;
+	self.writingWin2.layer.cornerRadius= 30.0f;
+	self.writingWin2.layer.masksToBounds = YES;
+	self.writingWin2.layer.borderWidth = 1.0;
+    self.nav.backgroundImage = [UIImage imageNamed:@"toolbar.png"];
 }
 
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	
-	[noteView setNeedsDisplay];
+	[self.noteView setNeedsDisplay];
     return (interfaceOrientation == UIInterfaceOrientationPortrait || 
 			interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
@@ -152,8 +131,24 @@
 }
 
 - (void)viewDidUnload {
-    nav = nil;
+    
 }
 
+#pragma mark - HandWritingController Delegate
+- (void)handWritingController:(TNHandWritingController *)controller didStartCreatingWord:(TNWord *)word
+{
+    
+}
 
+- (void)handWritingController:(TNHandWritingController *)controller didModifyWord:(TNWord *)word
+{
+    
+}
+
+- (void)handWritingController:(TNHandWritingController *)controller didFinishWord:(TNWord *)word
+{
+    if (word) {
+		[self.noteView addNewWord:word];
+	}
+}
 @end

@@ -8,26 +8,28 @@
 
 #import <UIKit/UIKit.h>
 #import "TNHandWritingView.h"
+#import "TNHandWritingController.h"
 #import "TNNoteView.h"
 
 @class ImageBackgroundNavigationBar;
 
 /*整个Note的界面*/
-@interface MainViewController : UIViewController <TDHandWritingViewDeleage,UIPopoverControllerDelegate>{
+@interface MainViewController : UIViewController <TNHandWritingControllerDelegate,UIPopoverControllerDelegate>
 
-	IBOutlet TNHandWritingView* writingWin1;
-	IBOutlet TNHandWritingView* writingWin2;
-	IBOutlet TNNoteView* noteView;
-	
-	IBOutlet UIBarButtonItem* toobarButtonChinese;
-	IBOutlet UIBarButtonItem* toobarButtonEnglish;
-	IBOutlet UIBarButtonItem* toobarButtonSpace;
-	IBOutlet UIBarButtonItem* toobarButtonCRLF;
-    IBOutlet ImageBackgroundNavigationBar *nav;
-    UIPopoverController* popover;
-}
+@property (nonatomic, strong) IBOutlet TNNoteView *noteView;
+@property (nonatomic, strong) IBOutlet ImageBackgroundNavigationBar *nav;
 
 @property (nonatomic,retain) UIPopoverController* popover;
+
+@property (nonatomic, strong) IBOutlet TNHandWritingView *writingWin1;
+@property (nonatomic, strong) IBOutlet TNHandWritingView *writingWin2;
+@property (nonatomic, strong) IBOutlet TNHandWritingController *handWritingController;
+
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonChinese;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonEnglish;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonSpace;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonCRLF;
+
 
 -(IBAction)buttonInputClick:(id)sender;
 -(IBAction)buttonBackSpaceClick:(id)sender;

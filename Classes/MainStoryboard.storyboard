@@ -32,11 +32,17 @@
                                         <rect key="frame" x="1" y="45" width="382" height="382"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.44" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ku7-4O-Jzh" id="q7i-ww-hNo"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" id="ldu-1D-WEq" customClass="TNHandWritingView">
                                         <rect key="frame" x="385" y="45" width="382" height="382"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.44" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ku7-4O-Jzh" id="vfd-k4-vIF"/>
+                                        </connections>
                                     </view>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="sdd-3h-PH3">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -94,6 +100,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="handWritingController" destination="ku7-4O-Jzh" id="Ibr-WE-lFH"/>
                         <outlet property="nav" destination="Mgg-kP-8cH" id="zks-kk-ZYt"/>
                         <outlet property="noteView" destination="CeL-Rv-5XC" id="ctH-6h-seO"/>
                         <outlet property="toobarButtonCRLF" destination="Y7Q-JC-hSu" id="5vy-ZY-9nO"/>
@@ -105,6 +112,13 @@
                         <outlet property="writingWin2" destination="ldu-1D-WEq" id="evc-Wi-bfa"/>
                     </connections>
                 </viewController>
+                <customObject id="ku7-4O-Jzh" customClass="TNHandWritingController">
+                    <connections>
+                        <outlet property="delegate" destination="8Lo-Qc-apk" id="i8I-Lj-1T7"/>
+                        <outlet property="writingWin1" destination="vfR-R2-bOg" id="2Kg-uI-6Vt"/>
+                        <outlet property="writingWin2" destination="ldu-1D-WEq" id="RJj-a8-WN4"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-90" y="-193"/>
         </scene>
@@ -125,6 +139,7 @@
                 <relationship kind="action" name="buttonReturnClick:"/>
                 <relationship kind="action" name="buttonSpaceClick:"/>
                 <relationship kind="action" name="showNotes:"/>
+                <relationship kind="outlet" name="handWritingController" candidateClass="TNHandWritingController"/>
                 <relationship kind="outlet" name="nav" candidateClass="ImageBackgroundNavigationBar"/>
                 <relationship kind="outlet" name="noteView" candidateClass="TNNoteView"/>
                 <relationship kind="outlet" name="toobarButtonCRLF" candidateClass="UIBarButtonItem"/>
@@ -135,8 +150,19 @@
                 <relationship kind="outlet" name="writingWin2" candidateClass="TNHandWritingView"/>
             </relationships>
         </class>
+        <class className="TNHandWritingController" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TNHandWritingController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+                <relationship kind="outlet" name="writingWin1" candidateClass="TNHandWritingView"/>
+                <relationship kind="outlet" name="writingWin2" candidateClass="TNHandWritingView"/>
+            </relationships>
+        </class>
         <class className="TNHandWritingView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TNHandWritingView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
         </class>
         <class className="TNNoteView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TNNoteView.h"/>

@@ -24,6 +24,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MainViewController.m */; };
 		437F5F451533E7C500A0228F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437F5F441533E7C500A0228F /* MainStoryboard.storyboard */; };
+		437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5F50153408C700A0228F /* TNHandWritingController.m */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F7C14A6699100060338 /* NoteBook.m in Sources */ = {isa = PBXBuildFile; fileRef = BD438F7B14A6699100060338 /* NoteBook.m */; };
 		BD438F7F14A6699200060338 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BD438F7E14A6699200060338 /* Note.m */; };
@@ -72,6 +73,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Tiny4Note_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tiny4Note_Prefix.pch; sourceTree = "<group>"; };
 		437F5F441533E7C500A0228F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = Classes/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		437F5F4F153408C700A0228F /* TNHandWritingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNHandWritingController.h; path = Classes/TNHandWritingController.h; sourceTree = "<group>"; };
+		437F5F50153408C700A0228F /* TNHandWritingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNHandWritingController.m; path = Classes/TNHandWritingController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F7A14A6699100060338 /* NoteBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteBook.h; path = Classes/NoteBook.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 		437F5F4A1534047400A0228F /* Hand Writing */ = {
 			isa = PBXGroup;
 			children = (
+				437F5F4F153408C700A0228F /* TNHandWritingController.h */,
+				437F5F50153408C700A0228F /* TNHandWritingController.m */,
 				15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */,
 				15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */,
 			);
@@ -354,6 +359,7 @@
 				BD8AC7A314A6657200E65AA7 /* NoteTableVIewController.m in Sources */,
 				BD438F7C14A6699100060338 /* NoteBook.m in Sources */,
 				BD438F7F14A6699200060338 /* Note.m in Sources */,
+				437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

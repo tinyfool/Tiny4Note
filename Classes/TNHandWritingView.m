@@ -7,16 +7,17 @@
 //
 
 #import "TNHandWritingView.h"
-#import "TNWord.h"
 
 @implementation TNHandWritingView
-@synthesize delegate;
+@synthesize delegate = _delegate;
+@synthesize lines = _lines;
+@synthesize currentLine = _currentLine;
 
 - (id)initWithFrame:(CGRect)frame {
 	
     if ((self = [super initWithFrame:frame])) {
 	
-		lines = [[NSMutableArray alloc] initWithCapacity:100];
+		_lines = [[NSMutableArray alloc] initWithCapacity:100];
     }
     return self;
 }
@@ -25,28 +26,15 @@
 	
 	if ((self = [super initWithCoder:aDecoder])) {
 		
-		lines = [[NSMutableArray alloc] initWithCapacity:100];
+		_lines = [[NSMutableArray alloc] initWithCapacity:100];
 	}
 	return self;
 }
 
--(id)getCurrentWord {
-
-	if (lines && [lines count]>0) {
-		
-		id ret = lines;
-		lines = [[NSMutableArray alloc] initWithCapacity:100];
-		[self setNeedsDisplay];
-		TNWord* word = [[TNWord alloc] init];
-		word.lines = ret;
-		word.oSize = self.frame.size;
-		word.size = CGSizeMake(40, 40);
-		return word;
-	}
-	else {
-		return nil;
-	}
-
+- (void)clean
+{
+    self.lines = [[NSMutableArray alloc] initWithCapacity:100];
+    [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -58,9 +46,9 @@
 	CGContextSetLineCap(ctx,kCGLineCapRound);
 	CGContextSetShadow(ctx,CGSizeMake(5, 5),5);
 	CGContextSetShouldAntialias(ctx,YES);
-	for (int i =0 ; i < [lines count]; i++) {
+	for (int i =0 ; i < [self.lines count]; i++) {
 		
-		NSArray* cline = [lines objectAtIndex:i];
+		NSArray* cline = [self.lines objectAtIndex:i];
 		int o = 0;
 		for (int j=0; j<[cline count]; j++) {
 			CGPoint point = [[cline objectAtIndex:j] CGPointValue];
@@ -77,29 +65,28 @@
 	CGContextStrokePath(ctx);
 }
 
-
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	
-	currentLine = [[NSMutableArray alloc] initWithCapacity:100];
-	[lines addObject:currentLine];                                                 
+	self.currentLine = [[NSMutableArray alloc] initWithCapacity:100];
+	[self.lines addObject:self.currentLine];                                                 
 	UITouch* touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self];
-	[currentLine addObject:[NSValue valueWithCGPoint:point]];
-	[delegate handWritingViewDidStartWriting:self];
+	[self.currentLine addObject:[NSValue valueWithCGPoint:point]];
+	[self.delegate handWritingViewDidStartWriting:self];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	
 	UITouch* touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self];
-	[currentLine addObject:[NSValue valueWithCGPoint:point]];
+	[self.currentLine addObject:[NSValue valueWithCGPoint:point]];
+    [self.delegate handWritingViewDidWriting:self];
 	[self setNeedsDisplay];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	
-	if ([currentLine count]>0) {
+	if ([self.currentLine count]>0) {
 		[self setNeedsDisplay];
 	}
 } 
