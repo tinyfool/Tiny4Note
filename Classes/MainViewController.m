@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "TNWord.h"
 #import "ImageBackgroundNavigationBar.h"
 #import "NoteBookTableViewController.h"
 #import "Tiny4NotePopoverBackgroundView.h"
@@ -30,26 +29,6 @@
 
 #pragma mark - 事件处理
 
-//点击输入键
--(IBAction)buttonInputClick:(id)sender {
-    [self.handWritingController finishWriting];
-}
-
-//点击回退键
--(IBAction)buttonBackSpaceClick:(id)sender {
-
-	[self.noteView backAWord];
-}
-
-//点击空格键
--(IBAction)buttonSpaceClick:(id)sender {
-    [self.handWritingController insertSpaceWord];
-}
-
-//点击回车键
--(IBAction)buttonReturnClick:(id)sender {
-    [self.handWritingController insertReturnWord];
-}
 
 -(IBAction)showNotes:(id)sender {
     
@@ -134,7 +113,32 @@
     
 }
 
-#pragma mark - HandWritingController Delegate
+#pragma mark - Note View
+
+
+#pragma mark - Input
+//点击输入键
+-(IBAction)buttonInputClick:(id)sender {
+    [self.handWritingController finishWriting];
+}
+
+//点击回退键
+-(IBAction)buttonBackSpaceClick:(id)sender {
+    
+	[self.noteView backAWord];
+}
+
+//点击空格键
+-(IBAction)buttonSpaceClick:(id)sender {
+    [self.handWritingController insertSpaceWord];
+}
+
+//点击回车键
+-(IBAction)buttonReturnClick:(id)sender {
+    [self.handWritingController insertReturnWord];
+}
+
+#pragma mark HandWritingController Delegate
 - (void)handWritingController:(TNHandWritingController *)controller didStartCreatingWord:(TNWord *)word
 {
     
