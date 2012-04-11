@@ -83,9 +83,17 @@
     }
 }
 
--(void)addNewWord:(id)word {
+-(void)addNewWord:(TNWord *)word {
 
 	[words addObject:word];
+    
+    TNWord *lastWord = [words lastObject];
+    if (lastWord) {
+        word.wordId = lastWord.wordId +1;
+    } else {
+        word.wordId = 0;
+    }
+    
 	addNewWording = 1;
 	//TODO:未来改成局部重排以及局部刷新
 	CGRect frame = [page drawAWord:word];
@@ -97,6 +105,7 @@
 -(void)backAWord {
 
 	[page backAWord];
+    
 	[page layoutAll];
 	[self setNeedsDisplay];
 }
