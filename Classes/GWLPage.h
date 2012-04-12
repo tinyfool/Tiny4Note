@@ -13,13 +13,12 @@
 
 @interface GWLPage : NSObject {
 	
-	NSMutableArray* words;
 	NSMutableArray* postions;
-	CGFloat width;
 	NSMutableArray* paragraphs;
 	CGPoint nextPoint;
     TNWord* lastWord;
     CGPoint lastPos;
+    
 	int currentRunId;
 	int currentParagraphId;
 	GWLRun* currentRun;
@@ -29,13 +28,14 @@
 }
 
 @property (nonatomic, unsafe_unretained) CGPoint currentPos;
-
--(void)setWords:(NSMutableArray*)newWords;
--(void)setWidth:(CGFloat)newWidth;
+@property (nonatomic, strong) NSMutableArray *words;
 -(void)layoutAll;
 -(void)drawAll;
 -(CGRect)drawAWord:(TNWord*)word;
 -(void)backAWord;
 -(void)touchAtPoint:(CGPoint)point;
 -(void)drawLastWord;
+
+@property (nonatomic, unsafe_unretained) CGSize size;
+
 @end

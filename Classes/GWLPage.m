@@ -9,11 +9,30 @@
 #import "GWLPage.h"
 #import "TNWord.h"
 #import "GWLRun.h"
-#import "GWLPostion.h"
 
+@interface GWLPostion : NSObject {
+    
+	int paragraphId;
+	int runId;
+	int runPosId;
+	CGPoint pos;
+}
+@property int paragraphId;
+@property int runId;
+@property int runPosId;
+@property CGPoint pos;
+@end
+
+@implementation GWLPostion
+@synthesize paragraphId,runId,runPosId,pos;
+@end
+#pragma mark -
 @implementation GWLPage
 @synthesize currentPos = _currentPos;
+@synthesize size = _size;
+@synthesize words = _words;
 
+#pragma mark -
 -(id)init {
 
 
@@ -23,10 +42,9 @@
 	return self;
 }
 
-
 -(void)touchAtPoint:(CGPoint)aPoint {
 
-    if ([words count]==0) {
+    if ([self.words count]==0) {
         return;
     }
 	CGFloat x = aPoint.x - emptySizeX;
@@ -70,16 +88,6 @@
 	}
 }
 
--(void)setWords:(NSMutableArray*)newWords {
-
-	words = newWords;
-}
-
--(void)setWidth:(CGFloat)newWidth {
-	
-	width = newWidth - 2*emptySizeX;
-}
-
 -(CGPoint)layoutAWord:(TNWord*)word {
 	
 	if (word.wordType == WordTypeNormal || word.wordType == WordTypeSpace) {
@@ -93,7 +101,7 @@
 		CGRect wordFrame = CGRectMake(pos.pos.x, pos.pos.y, word.size.width, word.size.height);
 		if (!CGRectContainsRect(currentRun.frame,wordFrame)) {
 			
-			currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, self.currentPos.y + sizeofword, width, sizeofword)];
+			currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, self.currentPos.y + sizeofword, self.size.width, sizeofword)];
 			[currentParagraph addObject:currentRun];
 			currentRunId++;
 			pos.runId = currentRunId;
@@ -112,7 +120,7 @@
 		currentParagraph = [[NSMutableArray alloc] init];
 		[paragraphs addObject:currentParagraph];
 		
-		currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, self.currentPos.y + sizeofword, width, sizeofword)];
+		currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, self.currentPos.y + sizeofword, self.size.width, sizeofword)];
 		[currentParagraph addObject:currentRun];
 		
 		GWLPostion* pos = [[GWLPostion alloc] init];
@@ -135,7 +143,7 @@
     //排版单位清零
 	currentWordId = 0;
 	self.currentPos = CGPointMake(0, 0);
-	currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, 0, width, sizeofword)];
+	currentRun = [[GWLRun alloc] initWithFrame:CGRectMake(0, 0, self.size.width, sizeofword)];
 	currentRunId = 0;
 	currentParagraph = [[NSMutableArray alloc] init];
 	[currentParagraph addObject:currentRun];
@@ -146,9 +154,9 @@
 	
 	postions = [[NSMutableArray alloc] init];
 	
-	for (int i = 0; i<[words count]; i++) {
+	for (int i = 0; i<[self.words count]; i++) {
 		
-		TNWord* word = [words objectAtIndex:i];
+		TNWord* word = [self.words objectAtIndex:i];
 		word.wordId = i;
 		[self layoutAWord:word];
 		currentWordId = i;
@@ -157,9 +165,21 @@
 
 -(void)backAWord {
 	
-	if (currentWordId>=0 && currentWordId<[words count]) {
-		[words removeObjectAtIndex:currentWordId];
+    BOOL needsLayout = (currentWordId != lastWord.wordId);
+    NSInteger newIndex = currentWordId - 1;
+    if (newIndex < 0) {
+        newIndex = 0;
+    }
+	if (currentWordId>=0 && currentWordId<[self.words count]) {
+		[self.words removeObjectAtIndex:currentWordId];
 	}
+    if (needsLayout) {
+        [self layoutAll];
+        if ([self.words count]> newIndex) {
+            TNWord *word = [self.words objectAtIndex:newIndex];
+            self.currentPos = word.pos;            
+        }
+    }
 }
 
 -(void)drawAll {
@@ -175,9 +195,9 @@
 			frame.origin.y += emptySizeY;
 		}
 	}
-	for (int i = 0; i < [words count]; i++) {
+	for (int i = 0; i < [self.words count]; i++) {
 		
-		TNWord* word = [words objectAtIndex:i];
+		TNWord* word = [self.words objectAtIndex:i];
 		GWLPostion* pos = [postions objectAtIndex:i];
         [word drawAtPoint:pos.pos];
 	}
@@ -198,6 +218,11 @@
     lastWord = word;
     lastPos = pos;
     return wordFrame;
+}
+
+- (CGRect)frameOfWord:(TNWord *)word
+{
+    return CGRectMake(word.pos.x +emptySizeX, word.pos.y+emptySizeY, word.size.width, word.size.height);
 }
 
 @end

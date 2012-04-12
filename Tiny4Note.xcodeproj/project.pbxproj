@@ -13,7 +13,6 @@
 		15154B6F120E7E0A0087A877 /* TNWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154B6E120E7E0A0087A877 /* TNWord.m */; };
 		15154C38120E905A0087A877 /* GWLPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154C37120E905A0087A877 /* GWLPage.m */; };
 		155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CA1346CA7F00F2322F /* GWLRun.m */; };
-		155E19CF1346CA7F00F2322F /* GWLPostion.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CC1346CA7F00F2322F /* GWLPostion.m */; };
 		15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */; };
 		15D60985120A7F49006D2D77 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D60984120A7F49006D2D77 /* back1.png */; };
 		15D60996120A830F006D2D77 /* TNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D60995120A830F006D2D77 /* TNNoteView.m */; };
@@ -54,8 +53,6 @@
 		15154C37120E905A0087A877 /* GWLPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLPage.m; path = Classes/GWLPage.m; sourceTree = "<group>"; };
 		155E19CA1346CA7F00F2322F /* GWLRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLRun.m; path = Classes/GWLRun.m; sourceTree = "<group>"; };
 		155E19CB1346CA7F00F2322F /* GWLRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLRun.h; path = Classes/GWLRun.h; sourceTree = "<group>"; };
-		155E19CC1346CA7F00F2322F /* GWLPostion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLPostion.m; path = Classes/GWLPostion.m; sourceTree = "<group>"; };
-		155E19CD1346CA7F00F2322F /* GWLPostion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLPostion.h; path = Classes/GWLPostion.h; sourceTree = "<group>"; };
 		155E19D01346CA8800F2322F /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = Classes/common.h; sourceTree = "<group>"; };
 		15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNHandWritingView.m; path = Classes/TNHandWritingView.m; sourceTree = "<group>"; };
 		15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNHandWritingView.h; path = Classes/TNHandWritingView.h; sourceTree = "<group>"; };
@@ -145,8 +142,6 @@
 			children = (
 				155E19CB1346CA7F00F2322F /* GWLRun.h */,
 				155E19CA1346CA7F00F2322F /* GWLRun.m */,
-				155E19CD1346CA7F00F2322F /* GWLPostion.h */,
-				155E19CC1346CA7F00F2322F /* GWLPostion.m */,
 				15154C36120E905A0087A877 /* GWLPage.h */,
 				15154C37120E905A0087A877 /* GWLPage.m */,
 				15154B6D120E7E0A0087A877 /* TNWord.h */,
@@ -352,7 +347,6 @@
 				1500D35B12810D5700F2C0F9 /* todo.m in Sources */,
 				BDBEAA21133D8568001623A0 /* ImageBackgroundNavigationBar.m in Sources */,
 				155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */,
-				155E19CF1346CA7F00F2322F /* GWLPostion.m in Sources */,
 				BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */,
 				BD8AC79614A63DA800E65AA7 /* NoteBookTableViewController.m in Sources */,
 				BD8AC7A014A65B3600E65AA7 /* Tiny4NotePopoverBackgroundView.m in Sources */,

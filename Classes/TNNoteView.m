@@ -17,8 +17,7 @@
 	words = [[NSMutableArray alloc] initWithCapacity:100];
 	page = [[GWLPage alloc] init];
 	[page setWords:words];
-	[page setWidth:622];
-    
+    page.size = CGSizeMake(622.0, 800);
     
     insertMark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"input.png"]];
     insertMark.animationImages = [[NSArray alloc] initWithObjects:
@@ -106,7 +105,7 @@
 
 	[page backAWord];
     
-	[page layoutAll];
+//	[page layoutAll];
 	[self setNeedsDisplay];
 }
 
