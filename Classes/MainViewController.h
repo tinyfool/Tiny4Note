@@ -30,6 +30,7 @@
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonSpace;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonCRLF;
 
+@property (nonatomic, unsafe_unretained) CGRect startFrame;
 
 -(IBAction)buttonInputClick:(id)sender;
 -(IBAction)buttonBackSpaceClick:(id)sender;

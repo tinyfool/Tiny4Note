@@ -24,6 +24,12 @@
 		28D7ACF80DDB3853001CB0EB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MainViewController.m */; };
 		437F5F451533E7C500A0228F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437F5F441533E7C500A0228F /* MainStoryboard.storyboard */; };
 		437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5F50153408C700A0228F /* TNHandWritingController.m */; };
+		437F5FA9153724A500A0228F /* Cover_Simple_1-Large.png in Resources */ = {isa = PBXBuildFile; fileRef = 437F5FA5153724A500A0228F /* Cover_Simple_1-Large.png */; };
+		437F5FAA153724A500A0228F /* Cover_Simple_1-Large@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 437F5FA6153724A500A0228F /* Cover_Simple_1-Large@2x.png */; };
+		437F5FAB153724A500A0228F /* Cover_Simple_1-Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 437F5FA7153724A500A0228F /* Cover_Simple_1-Thumb.png */; };
+		437F5FAC153724A500A0228F /* Cover_Simple_1-Thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 437F5FA8153724A500A0228F /* Cover_Simple_1-Thumb@2x.png */; };
+		437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FAE153724CB00A0228F /* BookshelfViewController.m */; };
+		437F5FB2153726C200A0228F /* PageSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FB1153726C100A0228F /* PageSegue.m */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F7C14A6699100060338 /* NoteBook.m in Sources */ = {isa = PBXBuildFile; fileRef = BD438F7B14A6699100060338 /* NoteBook.m */; };
 		BD438F7F14A6699200060338 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = BD438F7E14A6699200060338 /* Note.m */; };
@@ -72,6 +78,14 @@
 		437F5F441533E7C500A0228F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = Classes/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		437F5F4F153408C700A0228F /* TNHandWritingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNHandWritingController.h; path = Classes/TNHandWritingController.h; sourceTree = "<group>"; };
 		437F5F50153408C700A0228F /* TNHandWritingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNHandWritingController.m; path = Classes/TNHandWritingController.m; sourceTree = "<group>"; };
+		437F5FA5153724A500A0228F /* Cover_Simple_1-Large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cover_Simple_1-Large.png"; sourceTree = "<group>"; };
+		437F5FA6153724A500A0228F /* Cover_Simple_1-Large@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cover_Simple_1-Large@2x.png"; sourceTree = "<group>"; };
+		437F5FA7153724A500A0228F /* Cover_Simple_1-Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cover_Simple_1-Thumb.png"; sourceTree = "<group>"; };
+		437F5FA8153724A500A0228F /* Cover_Simple_1-Thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cover_Simple_1-Thumb@2x.png"; sourceTree = "<group>"; };
+		437F5FAD153724CB00A0228F /* BookshelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookshelfViewController.h; path = Classes/BookshelfViewController.h; sourceTree = "<group>"; };
+		437F5FAE153724CB00A0228F /* BookshelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookshelfViewController.m; path = Classes/BookshelfViewController.m; sourceTree = "<group>"; };
+		437F5FB0153726C100A0228F /* PageSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageSegue.h; path = Classes/PageSegue.h; sourceTree = "<group>"; };
+		437F5FB1153726C100A0228F /* PageSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageSegue.m; path = Classes/PageSegue.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F7A14A6699100060338 /* NoteBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteBook.h; path = Classes/NoteBook.h; sourceTree = "<group>"; };
@@ -193,6 +207,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				437F5FA41537247400A0228F /* Book Cover */,
 				BD438F8C14A675EA00060338 /* popoverbackground.png */,
 				BDBEAA14133D7F0B001623A0 /* toolbar.png */,
 				1500D3C7128134FF00F2C0F9 /* input.png */,
@@ -241,9 +256,24 @@
 			name = "Note View";
 			sourceTree = "<group>";
 		};
+		437F5FA41537247400A0228F /* Book Cover */ = {
+			isa = PBXGroup;
+			children = (
+				437F5FA5153724A500A0228F /* Cover_Simple_1-Large.png */,
+				437F5FA6153724A500A0228F /* Cover_Simple_1-Large@2x.png */,
+				437F5FA7153724A500A0228F /* Cover_Simple_1-Thumb.png */,
+				437F5FA8153724A500A0228F /* Cover_Simple_1-Thumb@2x.png */,
+			);
+			name = "Book Cover";
+			sourceTree = "<group>";
+		};
 		BD8AC79214A63D0900E65AA7 /* UI Classes */ = {
 			isa = PBXGroup;
 			children = (
+				437F5FAD153724CB00A0228F /* BookshelfViewController.h */,
+				437F5FAE153724CB00A0228F /* BookshelfViewController.m */,
+				437F5FB0153726C100A0228F /* PageSegue.h */,
+				437F5FB1153726C100A0228F /* PageSegue.m */,
 				28D7ACF60DDB3853001CB0EB /* MainViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* MainViewController.m */,
 				437F5F4E1534049F00A0228F /* Note View */,
@@ -327,6 +357,10 @@
 				BDBEAA15133D7F0B001623A0 /* toolbar.png in Resources */,
 				BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */,
 				437F5F451533E7C500A0228F /* MainStoryboard.storyboard in Resources */,
+				437F5FA9153724A500A0228F /* Cover_Simple_1-Large.png in Resources */,
+				437F5FAA153724A500A0228F /* Cover_Simple_1-Large@2x.png in Resources */,
+				437F5FAB153724A500A0228F /* Cover_Simple_1-Thumb.png in Resources */,
+				437F5FAC153724A500A0228F /* Cover_Simple_1-Thumb@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +388,8 @@
 				BD438F7C14A6699100060338 /* NoteBook.m in Sources */,
 				BD438F7F14A6699200060338 /* Note.m in Sources */,
 				437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */,
+				437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */,
+				437F5FB2153726C200A0228F /* PageSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

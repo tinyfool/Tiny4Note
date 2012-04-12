@@ -12,6 +12,10 @@
 #import "NoteBookTableViewController.h"
 #import "Tiny4NotePopoverBackgroundView.h"
 
+@interface MainViewController ()
+
+@end
+
 @implementation MainViewController
 @synthesize noteView = _noteView;
 @synthesize nav = _nav;
@@ -26,7 +30,7 @@
 @synthesize toobarButtonSpace = _toobarButtonSpace;
 @synthesize toobarButtonCRLF = _toobarButtonCRLF;
 
-
+@synthesize startFrame = _startFrame;
 #pragma mark - 事件处理
 
 
