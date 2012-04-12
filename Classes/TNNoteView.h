@@ -12,14 +12,13 @@
 @class GWLPage;
 @interface TNNoteView : UIView {
 
-	NSMutableArray* words;
 	CGContextRef ctx;
-	int addNewWording;
 	GWLPage* page;
     
     UIImageView* insertMark;
 }
 
+@property (nonatomic, strong) NSArray *words;
 -(void)initData;
 -(void)addNewWord:(id)word;
 -(void)backAWord;

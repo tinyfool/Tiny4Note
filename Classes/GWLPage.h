@@ -16,8 +16,6 @@
 	NSMutableArray* postions;
 	NSMutableArray* paragraphs;
 	CGPoint nextPoint;
-    TNWord* lastWord;
-    CGPoint lastPos;
     
 	int currentRunId;
 	int currentParagraphId;
@@ -29,13 +27,12 @@
 
 @property (nonatomic, unsafe_unretained) CGPoint currentPos;
 @property (nonatomic, strong) NSMutableArray *words;
--(void)layoutAll;
--(void)drawAll;
--(CGRect)drawAWord:(TNWord*)word;
--(void)backAWord;
--(void)touchAtPoint:(CGPoint)point;
+- (void)renderInContext:(CGContextRef)context;
 -(void)drawLastWord;
+-(void)touchAtPoint:(CGPoint)point;
 
 @property (nonatomic, unsafe_unretained) CGSize size;
-
+-(void)appendNewWord:(TNWord *)word;
+-(void)removeLastWord;
+- (CGRect)frameOfWord:(TNWord *)word;
 @end

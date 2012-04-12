@@ -11,13 +11,12 @@
 #import "GWLPage.h"
 
 @implementation TNNoteView
+@synthesize words = _words;
 
 -(void)initData {
-	
-	words = [[NSMutableArray alloc] initWithCapacity:100];
 	page = [[GWLPage alloc] init];
-	[page setWords:words];
     page.size = CGSizeMake(622.0, 800);
+	[page setWords:[[NSMutableArray alloc] initWithCapacity:100]];
     
     insertMark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"input.png"]];
     insertMark.animationImages = [[NSArray alloc] initWithObjects:
@@ -64,6 +63,16 @@
     }
 }
 
+- (void)setWords:(NSArray *)words
+{
+    [page setWords:[words mutableCopy]];
+}
+
+- (NSArray *)words
+{
+    return [page words];
+}
+
 - (void)drawRect:(CGRect)rect {
 	
 	ctx=UIGraphicsGetCurrentContext();
@@ -77,35 +86,21 @@
     if (rect.size.width<100)
         [page drawLastWord];
     else{
-        [page layoutAll];
-        [page drawAll];
+        [page renderInContext:ctx];
     }
 }
 
 -(void)addNewWord:(TNWord *)word {
 
-	[words addObject:word];
+    [page appendNewWord:word];
     
-    TNWord *lastWord = [words lastObject];
-    if (lastWord) {
-        word.wordId = lastWord.wordId +1;
-    } else {
-        word.wordId = 0;
-    }
-    
-	addNewWording = 1;
-	//TODO:未来改成局部重排以及局部刷新
-	CGRect frame = [page drawAWord:word];
-    //NSLog(@"block: %f,%f,%f,%f",frame.origin.x,frame.origin.y,frame.size.width,frame.size.height);
-    //[page layoutAll];
-	[self setNeedsDisplayInRect:frame];
+    [self setNeedsDisplayInRect:[page frameOfWord:word]];
 }
 
 -(void)backAWord {
 
-	[page backAWord];
-    
-//	[page layoutAll];
+	[page removeLastWord];
+
 	[self setNeedsDisplay];
 }
 

@@ -27,17 +27,22 @@
 @synthesize paragraphId,runId,runPosId,pos;
 @end
 #pragma mark -
+@interface GWLPage()
+@property (nonatomic, strong) TNWord *lastWord;
+@property (nonatomic, unsafe_unretained) CGPoint lastPos;
+@end
 @implementation GWLPage
 @synthesize currentPos = _currentPos;
 @synthesize size = _size;
 @synthesize words = _words;
+@synthesize lastWord = _lastWord;
+@synthesize lastPos = _lastPos;
 
 #pragma mark -
 -(id)init {
 
 
 	if ((self = [super init])) {
-		
 	}
 	return self;
 }
@@ -163,28 +168,21 @@
 	}
 }
 
--(void)backAWord {
-	
-    BOOL needsLayout = (currentWordId != lastWord.wordId);
-    NSInteger newIndex = currentWordId - 1;
-    if (newIndex < 0) {
-        newIndex = 0;
-    }
-	if (currentWordId>=0 && currentWordId<[self.words count]) {
-		[self.words removeObjectAtIndex:currentWordId];
-	}
-    if (needsLayout) {
-        [self layoutAll];
-        if ([self.words count]> newIndex) {
-            TNWord *word = [self.words objectAtIndex:newIndex];
-            self.currentPos = word.pos;            
-        }
-    }
+-(void)removeLastWord {
+    [self.words removeLastObject]; 
+    TNWord *lastWord = [self.words lastObject];
+    self.currentPos = CGPointMake(lastWord.pos.x + lastWord.size.width, lastWord.pos.y);
 }
 
--(void)drawAll {
-	
-	for (int i = 0; i < [paragraphs count]; i++) {
+- (void)setWords:(NSMutableArray *)words
+{
+    _words = words;
+    [self layoutAll];
+}
+
+- (void)renderInContext:(CGContextRef)context
+{
+    for (int i = 0; i < [paragraphs count]; i++) {
 		
 		id paragraph = [paragraphs objectAtIndex:i];
 		for (int j = 0; j < [paragraph count]; j++) {
@@ -201,28 +199,50 @@
 		GWLPostion* pos = [postions objectAtIndex:i];
         [word drawAtPoint:pos.pos];
 	}
-//	insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
 }
 
 -(void)drawLastWord {
     
     //NSLog(@"currentWordId: %d, lastPos: %f,%f",currentWordId,lastPos.x,lastPos.y);
-    [lastWord drawAtPoint:lastPos];
-//    insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
+    TNWord *lastWord = [self.words lastObject];
+    [lastWord drawAtPoint:lastWord.pos];
+    //    insertMark.frame = CGRectMake(currentPos.x+emptySizeX, currentPos.y+emptySizeY, 5, 40);
 }
 
-- (CGRect)drawAWord:(TNWord*)word {
 
-    CGPoint pos = [self layoutAWord:word];
-    CGRect wordFrame = CGRectMake(pos.x +emptySizeX, pos.y+emptySizeY, word.size.width, word.size.height);
-    lastWord = word;
-    lastPos = pos;
-    return wordFrame;
-}
 
 - (CGRect)frameOfWord:(TNWord *)word
 {
     return CGRectMake(word.pos.x +emptySizeX, word.pos.y+emptySizeY, word.size.width, word.size.height);
 }
 
+-(void)appendNewWord:(TNWord *)word {
+    
+	[self.words addObject:word];
+    
+    TNWord *lastWord = [self.words lastObject];
+    if (lastWord) {
+        word.wordId = lastWord.wordId +1;
+    } else {
+        word.wordId = 0;
+    }
+    [self layoutAWord:word];
+}
+
+- (void)insertWords:(NSArray *)array atIndexes:(NSIndexSet *)indexes
+{
+    [self.words insertObjects:array atIndexes:indexes];
+    [self layoutAll];
+}
+
+- (void)insertWord:(TNWord *)word atIndex:(NSUInteger)index
+{
+    [self insertWords:[NSArray arrayWithObject:word] atIndexes:[NSIndexSet indexSetWithIndex:index]];
+}
+
+- (void)removeWordsAtIndexes:(NSIndexSet *)indexes
+{
+    [self.words removeObjectsAtIndexes:indexes];
+    [self layoutAll];
+}
 @end
