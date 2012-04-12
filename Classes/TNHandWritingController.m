@@ -37,7 +37,7 @@
         TNWord *newWord = [[TNWord alloc] init];
         newWord.oSize = handWritingView.frame.size;
         newWord.size = CGSizeMake(40, 40);        
-        
+        newWord.lines = handWritingView.lines;
         self.currentWord = newWord;
         [self.delegate handWritingController:self didStartCreatingWord:newWord];
     } else {
