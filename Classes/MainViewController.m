@@ -141,18 +141,21 @@
 #pragma mark HandWritingController Delegate
 - (void)handWritingController:(TNHandWritingController *)controller didStartCreatingWord:(TNWord *)word
 {
-    
+    if (word) {
+		[self.noteView addNewWord:word];
+	}
 }
 
 - (void)handWritingController:(TNHandWritingController *)controller didModifyWord:(TNWord *)word
 {
-    
+    [self.noteView setNeedsDisplayInRect:CGRectMake(word.pos.x +emptySizeX, word.pos.y +emptySizeY, word.size.width, word.size.height)];
 }
 
 - (void)handWritingController:(TNHandWritingController *)controller didFinishWord:(TNWord *)word
 {
-    if (word) {
-		[self.noteView addNewWord:word];
-	}
+    if (word && word.wordType != WordTypeNormal) {
+        [self.noteView addNewWord:word];
+        
+    }
 }
 @end
