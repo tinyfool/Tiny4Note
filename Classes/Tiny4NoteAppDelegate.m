@@ -7,8 +7,8 @@
 //
 
 #import "Tiny4NoteAppDelegate.h"
-#import "MainViewController.h"
-#import "NoteBook.h"
+#import "BookshelfViewController.h"
+
 @implementation Tiny4NoteAppDelegate
 
 @synthesize window;
@@ -18,6 +18,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     [self initNotebook];
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+    BookshelfViewController *vc = (BookshelfViewController *)nav.topViewController;
+    vc.managedObjectContext = self.managedObjectContext;
+    
     [MobClick setDelegate:self reportPolicy:BATCH];
 	return YES;
 }
@@ -27,30 +31,6 @@
 	if (!context) {
 	}
     
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"NoteBook" inManagedObjectContext:managedObjectContext];
-    [request setEntity:entity];
-    NSError *error = nil;
-    NSUInteger count = [managedObjectContext countForFetchRequest:request error:&error];
-    
-    if (count == 0) {
-        
-        NSDate* date = [NSDate date];
-        NoteBook* notebook = [NSEntityDescription insertNewObjectForEntityForName:@"NoteBook" inManagedObjectContext:managedObjectContext];
-        [notebook setName:@"日记本"];
-        [notebook setCreatetime:date];
-        
-        notebook = [NSEntityDescription insertNewObjectForEntityForName:@"NoteBook" inManagedObjectContext:managedObjectContext];
-        [notebook setName:@"工作笔记"];
-        [notebook setCreatetime:date];
-        
-        notebook = [NSEntityDescription insertNewObjectForEntityForName:@"NoteBook" inManagedObjectContext:managedObjectContext];
-        [notebook setName:@"学习笔记"];
-        [notebook setCreatetime:date];
-        
-        NSError *error = nil;
-        [managedObjectContext save:&error];
-    }
 }
 
 - (NSString *)appKey{
