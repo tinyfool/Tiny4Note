@@ -98,8 +98,6 @@
     UIImage *coverImage = [UIImage imageNamed:[noteVc.note.coverName stringByAppendingString:@"-Large.png"]];
     UIImageView *coverImageView = [[UIImageView alloc] initWithImage:coverImage];
     coverImageView.layer.anchorPoint = CGPointMake(0.0, 0.5);
-    coverImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin |
-    UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
     coverImageView.frame = noteVc.view.bounds;
     [noteImageView addSubview:coverImageView];
     
@@ -110,8 +108,8 @@
     bookshelfVc.navigationController.view.userInteractionEnabled = NO;
     [UIView animateWithDuration:1.0 animations:^{
         noteImageView.frame = noteVc.startFrame;
+        coverImageView.frame = CGRectMake(0, 0, noteImageView.frame.size.width, noteImageView.frame.size.height);
         coverImageView.layer.transform = CATransform3DMakeRotation(0, 0, 1, 0);
-        
     } completion:^(BOOL finished) {
         [noteImageView removeFromSuperview];
         bookshelfVc.navigationController.view.userInteractionEnabled = YES;
