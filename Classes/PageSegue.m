@@ -9,6 +9,7 @@
 #import "PageSegue.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MainViewController.h"
+#import "Note.h"
 
 @implementation PageSegue
 
@@ -24,31 +25,33 @@
 
 - (void)perform
 {
-    UIViewController *sourceVc = self.sourceViewController;
-    MainViewController *destinationVc = self.destinationViewController;
-    destinationVc.view.frame = sourceVc.view.frame;
-    UIImage *destinationImage = [self imageForViewController:destinationVc];
-    UIImageView *destinationImageView = [[UIImageView alloc] initWithImage:destinationImage];
+    UIViewController *bookshelfVc = self.sourceViewController;
+    MainViewController *noteVc = self.destinationViewController;
+    noteVc.view.frame = bookshelfVc.view.frame;
+    UIImage *noteImage = [self imageForViewController:noteVc];
+    UIImageView *noteImageView = [[UIImageView alloc] initWithImage:noteImage];
     
-    UIImage *coverImage = [UIImage imageNamed:@"Cover_Simple_1-Large.png"];
+    UIImage *coverImage = [UIImage imageNamed:[noteVc.note.coverName stringByAppendingString:@"-Large.png"]];
     UIImageView *coverImageView = [[UIImageView alloc] initWithImage:coverImage];
     coverImageView.layer.anchorPoint = CGPointMake(0.0, 0.5);
     coverImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
 
-    coverImageView.frame = destinationImageView.bounds;
-    [destinationImageView addSubview:coverImageView];
+    coverImageView.frame = noteImageView.bounds;
+    [noteImageView addSubview:coverImageView];
     
-    [sourceVc.view addSubview:destinationImageView];
+    [bookshelfVc.view addSubview:noteImageView];
     
-    CGRect targetFrame = destinationVc.view.frame;
-    destinationImageView.frame = destinationVc.startFrame;
+    CGRect targetFrame = noteVc.view.frame;
+    noteImageView.frame = noteVc.startFrame;
 
+    bookshelfVc.navigationController.view.userInteractionEnabled = NO;
     [UIView animateWithDuration:1.0 animations:^{
-        destinationImageView.frame = targetFrame;
+        noteImageView.frame = targetFrame;
         coverImageView.layer.transform = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
     } completion:^(BOOL finished) {
-        [destinationImageView removeFromSuperview];
-        [sourceVc.navigationController pushViewController:destinationVc animated:NO];
+        [noteImageView removeFromSuperview];
+        [bookshelfVc.navigationController pushViewController:noteVc animated:NO];
+        bookshelfVc.navigationController.view.userInteractionEnabled = YES;
     }];
 }
 @end
