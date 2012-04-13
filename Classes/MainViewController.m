@@ -90,7 +90,7 @@
 {
     MainViewController *noteVc = self;
     UIViewController *bookshelfVc = [noteVc.navigationController.viewControllers objectAtIndex:0];
-        
+
     UIImage *noteImage = [self imageForViewController:noteVc];
     UIImageView *noteImageView = [[UIImageView alloc] initWithImage:noteImage];
     
@@ -107,12 +107,14 @@
     coverImageView.layer.transform = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
     [noteVc.navigationController popViewControllerAnimated:NO];
     
+    bookshelfVc.navigationController.view.userInteractionEnabled = NO;
     [UIView animateWithDuration:1.0 animations:^{
         noteImageView.frame = noteVc.startFrame;
         coverImageView.layer.transform = CATransform3DMakeRotation(0, 0, 1, 0);
         
     } completion:^(BOOL finished) {
         [noteImageView removeFromSuperview];
+        bookshelfVc.navigationController.view.userInteractionEnabled = YES;
     }];
 
 }
