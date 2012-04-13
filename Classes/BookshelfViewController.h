@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NSFetchedResultsController;
 
 @interface BookshelfViewController : UITableViewController
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+- (IBAction)didPressedNewButton:(id)sender;
 
 @end

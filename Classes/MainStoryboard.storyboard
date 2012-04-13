@@ -61,8 +61,13 @@
                             <outlet property="delegate" destination="8Kr-Z0-9Zs" id="GYQ-Ax-t5V"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KXe-qD-MKP"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" id="KXe-qD-MKP">
+                        <barButtonItem key="rightBarButtonItem" title="New" id="UYZ-eS-AAh">
+                            <connections>
+                                <action selector="didPressedNewButton:" destination="8Kr-Z0-9Zs" id="j1q-MK-iNc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
             </objects>
@@ -190,6 +195,9 @@
     <classes>
         <class className="BookshelfViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BookshelfViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="didPressedNewButton:"/>
+            </relationships>
         </class>
         <class className="ImageBackgroundNavigationBar" superclassName="UINavigationBar">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageBackgroundNavigationBar.h"/>

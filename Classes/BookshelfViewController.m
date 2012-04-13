@@ -8,11 +8,15 @@
 
 #import "BookshelfViewController.h"
 #import "MainViewController.h"
+#import "Note.h"
 
 @interface BookshelfViewController ()
 @end
 
 @implementation BookshelfViewController
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize fetchedResultsController = _fetchedResultsController;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +36,22 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Note"];
+    // Configure the request's entity, and optionally its predicate.
+    NSSortDescriptor *firstSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createtime" ascending:YES];
+    fetchRequest.sortDescriptors = [NSArray arrayWithObjects:firstSortDescriptor, nil];
+    
+    NSFetchedResultsController *controller = [[NSFetchedResultsController alloc]
+                                              initWithFetchRequest:fetchRequest
+                                              managedObjectContext:self.managedObjectContext
+                                              sectionNameKeyPath:nil
+                                              cacheName:nil];
+    
+    __autoreleasing NSError *error;
+    BOOL success = [controller performFetch:&error];
+    self.fetchedResultsController = controller;
+
 }
 
 - (void)viewDidUnload
@@ -49,10 +69,16 @@
 #pragma mark -
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    MainViewController *destinationViewController = (MainViewController *)segue.destinationViewController;
+
     UITableViewCell *cell = (UITableViewCell *)sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
     CGRect startFrame = [self.view convertRect:cell.imageView.frame fromView:cell];
-//    CGRect startFrame = [self.navigationController.view convertRect:cell.imageView.frame fromView:cell];
-    [(MainViewController *)segue.destinationViewController setStartFrame:startFrame];
+    
+    destinationViewController.startFrame = startFrame;
+    destinationViewController.note = note;
 }
 
 #pragma mark - Table view data source
@@ -60,14 +86,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,8 +100,11 @@
     static NSString *CellIdentifier = @"BookCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    cell.imageView.image = [UIImage imageNamed:@"Cover_Simple_1-Thumb.png"];
-    cell.textLabel.text = @"Note";
+    Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    NSString *thumbName = [note.coverName stringByAppendingString:@"-Thumb.png"];
+    cell.imageView.image = [UIImage imageNamed:thumbName];
+    cell.textLabel.text = note.name;
     
     return cell;
 }
@@ -134,4 +162,13 @@
      */    
 }
 
+- (IBAction)didPressedNewButton:(id)sender {
+    Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+    note.createtime = [NSDate date];
+    note.updatetime = [NSDate date];
+    note.coverName = @"Cover_Simple_1";
+    note.name = @"New Note";
+    [self.fetchedResultsController performFetch:nil];
+    [self.tableView reloadData];
+}
 @end
