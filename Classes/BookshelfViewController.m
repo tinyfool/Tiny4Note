@@ -166,7 +166,7 @@
     Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
     note.createtime = [NSDate date];
     note.updatetime = [NSDate date];
-    note.coverName = @"Cover_Simple_1";
+    note.coverName = @"Cover_Simple_3";
     note.name = @"New Note";
     [self.fetchedResultsController performFetch:nil];
     [self.tableView reloadData];

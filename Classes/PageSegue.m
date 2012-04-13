@@ -31,7 +31,7 @@
     UIImage *noteImage = [self imageForViewController:noteVc];
     UIImageView *noteImageView = [[UIImageView alloc] initWithImage:noteImage];
     
-    UIImage *coverImage = [UIImage imageNamed:[noteVc.note.coverName stringByAppendingString:@"-Large.png"]];
+    UIImage *coverImage = [UIImage imageNamed:[noteVc.note.coverName stringByAppendingString:@".png"]];
     UIImageView *coverImageView = [[UIImageView alloc] initWithImage:coverImage];
     coverImageView.layer.anchorPoint = CGPointMake(0.0, 0.5);
     coverImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;

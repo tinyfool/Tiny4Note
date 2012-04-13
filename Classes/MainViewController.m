@@ -95,7 +95,7 @@
     UIImageView *noteImageView = [[UIImageView alloc] initWithImage:noteImage];
     
     
-    UIImage *coverImage = [UIImage imageNamed:[noteVc.note.coverName stringByAppendingString:@"-Large.png"]];
+    UIImage *coverImage = [UIImage imageNamed:[noteVc.note.coverName stringByAppendingString:@".png"]];
     UIImageView *coverImageView = [[UIImageView alloc] initWithImage:coverImage];
     coverImageView.layer.anchorPoint = CGPointMake(0.0, 0.5);
     coverImageView.frame = noteVc.view.bounds;
