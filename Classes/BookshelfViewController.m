@@ -163,11 +163,36 @@
 }
 
 - (IBAction)didPressedNewButton:(id)sender {
-    Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
-    note.createtime = [NSDate date];
-    note.updatetime = [NSDate date];
-    note.coverName = @"Cover_Simple_3";
-    note.name = @"New Note";
+//    Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+//    note.createtime = [NSDate date];
+//    note.updatetime = [NSDate date];
+//    
+//    int i = arc4random() % 5 + 1;
+//    int j = arc4random() % 5 + 1;
+//    BOOL isSimpleCover = (arc4random() % 2) == 1;
+//    BOOL isSimplePaper = (arc4random() % 2) == 1;
+//    
+//    note.coverName = [NSString stringWithFormat:@"Cover_%@_%i",isSimpleCover ? @"Simple" : @"Doodle",i];
+//    note.paperName = [NSString stringWithFormat:@"Paper_%@_%i",isSimplePaper ? @"Simple" : @"Doodle",j];
+//    note.name = [NSString stringWithFormat:@"New Note_%i_%i",i,j];
+    
+    for (int i = 1; i<6; i++) {
+        Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+        note.createtime = [NSDate date];
+        note.updatetime = [NSDate date];
+        note.name = @"Simple Note";
+        note.coverName = [NSString stringWithFormat:@"Cover_Simple_%i",i];
+        note.paperName = [NSString stringWithFormat:@"Paper_Simple_%i",i];
+    }
+    
+    for (int i = 1; i<6; i++) {
+        Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
+        note.createtime = [NSDate date];
+        note.updatetime = [NSDate date];
+        note.name = @"Doodle Note";
+        note.coverName = [NSString stringWithFormat:@"Cover_Doodle_%i",i];
+        note.paperName = [NSString stringWithFormat:@"Paper_Doodle_%i",i];
+    }
     [self.fetchedResultsController performFetch:nil];
     [self.tableView reloadData];
 }
