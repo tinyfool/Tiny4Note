@@ -4,9 +4,10 @@
         <attribute name="coverName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createtime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paperName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatetime" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Note" positionX="189" positionY="198" width="117" height="105"/>
+        <element name="Note" positionX="189" positionY="198" width="117" height="120"/>
     </elements>
 </model>

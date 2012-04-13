@@ -26,7 +26,6 @@
 		437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5F50153408C700A0228F /* TNHandWritingController.m */; };
 		437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FAE153724CB00A0228F /* BookshelfViewController.m */; };
 		437F5FB2153726C200A0228F /* PageSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FB1153726C100A0228F /* PageSegue.m */; };
-		437F5FC31537D94D00A0228F /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FC21537D94D00A0228F /* Note.m */; };
 		43D1403915380BD100210B63 /* Cover_Simple_1-Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 43D1402515380BD100210B63 /* Cover_Simple_1-Thumb.png */; };
 		43D1403A15380BD100210B63 /* Cover_Simple_1-Thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43D1402615380BD100210B63 /* Cover_Simple_1-Thumb@2x.png */; };
 		43D1403B15380BD100210B63 /* Cover_Simple_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 43D1402715380BD100210B63 /* Cover_Simple_1.png */; };
@@ -87,6 +86,7 @@
 		43D1409D15380C2300210B63 /* Paper_Simple_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43D1409315380C2300210B63 /* Paper_Simple_4@2x.png */; };
 		43D1409E15380C2300210B63 /* Paper_Simple_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 43D1409415380C2300210B63 /* Paper_Simple_5.png */; };
 		43D1409F15380C2300210B63 /* Paper_Simple_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43D1409515380C2300210B63 /* Paper_Simple_5@2x.png */; };
+		43D140A215380DBA00210B63 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D140A115380DBA00210B63 /* Note.m */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BD438F8C14A675EA00060338 /* popoverbackground.png */; };
 		BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */; };
@@ -137,8 +137,6 @@
 		437F5FAE153724CB00A0228F /* BookshelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookshelfViewController.m; path = Classes/BookshelfViewController.m; sourceTree = "<group>"; };
 		437F5FB0153726C100A0228F /* PageSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageSegue.h; path = Classes/PageSegue.h; sourceTree = "<group>"; };
 		437F5FB1153726C100A0228F /* PageSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageSegue.m; path = Classes/PageSegue.m; sourceTree = "<group>"; };
-		437F5FC11537D94D00A0228F /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Classes/Note.h; sourceTree = "<group>"; };
-		437F5FC21537D94D00A0228F /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Classes/Note.m; sourceTree = "<group>"; };
 		43D1402515380BD100210B63 /* Cover_Simple_1-Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cover_Simple_1-Thumb.png"; path = "../../../Desktop/NoteImages/Cover_Simple_1-Thumb.png"; sourceTree = "<group>"; };
 		43D1402615380BD100210B63 /* Cover_Simple_1-Thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cover_Simple_1-Thumb@2x.png"; path = "../../../Desktop/NoteImages/Cover_Simple_1-Thumb@2x.png"; sourceTree = "<group>"; };
 		43D1402715380BD100210B63 /* Cover_Simple_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cover_Simple_1.png; path = ../../../Desktop/NoteImages/Cover_Simple_1.png; sourceTree = "<group>"; };
@@ -199,6 +197,8 @@
 		43D1409315380C2300210B63 /* Paper_Simple_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Paper_Simple_4@2x.png"; path = "../../../Desktop/NoteImages/Paper_Simple_4@2x.png"; sourceTree = "<group>"; };
 		43D1409415380C2300210B63 /* Paper_Simple_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Paper_Simple_5.png; path = ../../../Desktop/NoteImages/Paper_Simple_5.png; sourceTree = "<group>"; };
 		43D1409515380C2300210B63 /* Paper_Simple_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Paper_Simple_5@2x.png"; path = "../../../Desktop/NoteImages/Paper_Simple_5@2x.png"; sourceTree = "<group>"; };
+		43D140A015380DBA00210B63 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Classes/Note.h; sourceTree = "<group>"; };
+		43D140A115380DBA00210B63 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Classes/Note.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F8C14A675EA00060338 /* popoverbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverbackground.png; sourceTree = "<group>"; };
@@ -300,9 +300,9 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				43D140A015380DBA00210B63 /* Note.h */,
+				43D140A115380DBA00210B63 /* Note.m */,
 				BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */,
-				437F5FC11537D94D00A0228F /* Note.h */,
-				437F5FC21537D94D00A0228F /* Note.m */,
 				BDDBEEE814A60F6F008FD0BE /* MobClick.h */,
 				155E19D01346CA8800F2322F /* common.h */,
 				32CA4F630368D1EE00C91783 /* Tiny4Note_Prefix.pch */,
@@ -647,7 +647,7 @@
 				437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */,
 				437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */,
 				437F5FB2153726C200A0228F /* PageSegue.m in Sources */,
-				437F5FC31537D94D00A0228F /* Note.m in Sources */,
+				43D140A215380DBA00210B63 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

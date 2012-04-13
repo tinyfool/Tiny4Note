@@ -15,6 +15,8 @@
 
 @implementation MainViewController
 @synthesize note = _note;
+@synthesize paperImageView = _paperImageView;
+@synthesize coverImageView = _coverImageView;
 @synthesize noteView = _noteView;
 @synthesize nav = _nav;
 
@@ -63,6 +65,10 @@
 	self.writingWin2.layer.borderWidth = 1.0;
 //    self.nav.backgroundImage = [UIImage imageNamed:@"toolbar.png"];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(didPressedBackButton:)];
+    
+    self.paperImageView.image = [UIImage imageNamed:[self.note.paperName stringByAppendingString:@".png"]];
+    self.coverImageView.image = [UIImage imageNamed:[self.note.coverName stringByAppendingString:@".png"]];
+    self.coverImageView.frame = self.view.bounds;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -131,6 +137,8 @@
 }
 
 - (void)viewDidUnload {
+    [self setCoverImageView:nil];
+    [self setPaperImageView:nil];
     
 }
 

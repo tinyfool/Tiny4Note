@@ -12,9 +12,10 @@
 
 @interface Note : NSManagedObject
 
+@property (nonatomic, retain) NSString * coverName;
 @property (nonatomic, retain) NSDate * createtime;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDate * updatetime;
-@property (nonatomic, retain) NSString * coverName;
+@property (nonatomic, retain) NSString * paperName;
 
 @end

@@ -19,6 +19,8 @@
 
 @property (nonatomic, strong) Note *note;
 
+@property (strong, nonatomic) IBOutlet UIImageView *paperImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (nonatomic, strong) IBOutlet TNNoteView *noteView;
 @property (nonatomic, strong) IBOutlet ImageBackgroundNavigationBar *nav;
 

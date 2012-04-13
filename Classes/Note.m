@@ -11,9 +11,10 @@
 
 @implementation Note
 
+@dynamic coverName;
 @dynamic createtime;
 @dynamic name;
 @dynamic updatetime;
-@dynamic coverName;
+@dynamic paperName;
 
 @end
