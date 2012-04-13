@@ -8,15 +8,13 @@
 
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ImageBackgroundNavigationBar.h"
-#import "NoteBookTableViewController.h"
-#import "Tiny4NotePopoverBackgroundView.h"
-
+#import "Note.h"
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
+@synthesize note = _note;
 @synthesize noteView = _noteView;
 @synthesize nav = _nav;
 
@@ -32,39 +30,6 @@
 
 @synthesize startFrame = _startFrame;
 #pragma mark - 事件处理
-
-
--(IBAction)showNotes:(id)sender {
-    
-    if(self.popover) {
-        
-        [self.popover dismissPopoverAnimated:YES];
-        self.popover = NULL;
-        return;
-    }
-    NoteBookTableViewController* noteBookTable = [[NoteBookTableViewController alloc] init];
-    UINavigationController* noteBookNav = [[UINavigationController alloc] initWithRootViewController:noteBookTable];
-    UIPopoverController* noteBookPopover = [[UIPopoverController alloc] initWithContentViewController:noteBookNav];
-    noteBookPopover.delegate = self;
-    
-    if (NSClassFromString(@"UIPopoverBackgroundView")) {
-    
-        noteBookPopover.popoverBackgroundViewClass = [Tiny4NotePopoverBackgroundView class];
-    }
-    self.popover = noteBookPopover;
-    [self.popover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    //UIPopoverBackgroundView
-}
-
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
-
-    self.popover = NULL;
-}
-
--(IBAction)addNote:(id)sender {
-
-}
-
 
 #pragma mark - 标准View处理
 
@@ -96,9 +61,61 @@
 	self.writingWin2.layer.cornerRadius= 30.0f;
 	self.writingWin2.layer.masksToBounds = YES;
 	self.writingWin2.layer.borderWidth = 1.0;
-    self.nav.backgroundImage = [UIImage imageNamed:@"toolbar.png"];
+//    self.nav.backgroundImage = [UIImage imageNamed:@"toolbar.png"];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(didPressedBackButton:)];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (UIImage *)imageForViewController:(UIViewController *)vc
+{
+    UIGraphicsBeginImageContext(vc.view.frame.size);
+    [vc.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+- (void)didPressedBackButton:(id)sender
+{
+    MainViewController *noteVc = self;
+    UIViewController *bookshelfVc = [noteVc.navigationController.viewControllers objectAtIndex:0];
+        
+    UIImage *noteImage = [self imageForViewController:noteVc];
+    UIImageView *noteImageView = [[UIImageView alloc] initWithImage:noteImage];
+    
+    
+    UIImage *coverImage = [UIImage imageNamed:[noteVc.note.coverName stringByAppendingString:@"-Large.png"]];
+    UIImageView *coverImageView = [[UIImageView alloc] initWithImage:coverImage];
+    coverImageView.layer.anchorPoint = CGPointMake(0.0, 0.5);
+    coverImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin |
+    UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
+    coverImageView.frame = noteVc.view.bounds;
+    [noteImageView addSubview:coverImageView];
+    
+    [bookshelfVc.view addSubview:noteImageView];
+    coverImageView.layer.transform = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
+    [noteVc.navigationController popViewControllerAnimated:NO];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        noteImageView.frame = noteVc.startFrame;
+        coverImageView.layer.transform = CATransform3DMakeRotation(0, 0, 1, 0);
+        
+    } completion:^(BOOL finished) {
+        [noteImageView removeFromSuperview];
+    }];
+
+}
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

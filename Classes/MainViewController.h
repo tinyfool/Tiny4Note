@@ -12,9 +12,12 @@
 #import "TNNoteView.h"
 
 @class ImageBackgroundNavigationBar;
+@class Note;
 
 /*整个Note的界面*/
 @interface MainViewController : UIViewController <TNHandWritingControllerDelegate,UIPopoverControllerDelegate>
+
+@property (nonatomic, strong) Note *note;
 
 @property (nonatomic, strong) IBOutlet TNNoteView *noteView;
 @property (nonatomic, strong) IBOutlet ImageBackgroundNavigationBar *nav;
