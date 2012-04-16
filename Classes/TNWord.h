@@ -11,7 +11,7 @@
 
 @interface TNWord : NSObject {
 
-	int	wordType;
+	WordType wordType;
 	NSArray* lines;
 	CGSize oSize;
 	CGSize size;
@@ -19,7 +19,7 @@
 	int wordId;
 }
 
-@property int wordType;
+@property WordType wordType;
 @property(retain) NSArray* lines;
 @property CGSize oSize;
 @property CGSize size;
