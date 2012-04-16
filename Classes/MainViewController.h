@@ -17,6 +17,7 @@
 /*整个Note的界面*/
 @interface MainViewController : UIViewController <TNHandWritingControllerDelegate,UIPopoverControllerDelegate>
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) Note *note;
 
 @property (strong, nonatomic) IBOutlet UIImageView *paperImageView;

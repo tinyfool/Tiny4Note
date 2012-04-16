@@ -70,7 +70,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MainViewController *destinationViewController = (MainViewController *)segue.destinationViewController;
-
+    destinationViewController.managedObjectContext = self.managedObjectContext;
     UITableViewCell *cell = (UITableViewCell *)sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -187,8 +187,6 @@
     
     for (int i = 1; i<6; i++) {
         Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
-        note.createtime = [NSDate date];
-        note.updatetime = [NSDate date];
         note.name = @"Doodle Note";
         note.coverName = [NSString stringWithFormat:@"Cover_Doodle_%i",i];
         note.paperName = [NSString stringWithFormat:@"Paper_Doodle_%i",i];

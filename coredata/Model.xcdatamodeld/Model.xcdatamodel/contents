@@ -6,8 +6,16 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="paperName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatetime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="words" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TNWord" inverseName="note" inverseEntity="TNWord" syncable="YES"/>
+    </entity>
+    <entity name="TNWord" representedClassName="TNWord" syncable="YES">
+        <attribute name="lines" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="wordType" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="wordTypeObj" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="words" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Note" positionX="189" positionY="198" width="117" height="120"/>
+        <element name="Note" positionX="189" positionY="198" width="117" height="135"/>
+        <element name="TNWord" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

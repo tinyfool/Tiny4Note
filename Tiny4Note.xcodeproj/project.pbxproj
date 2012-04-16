@@ -10,7 +10,6 @@
 		1500D35B12810D5700F2C0F9 /* todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1500D35A12810D5700F2C0F9 /* todo.m */; };
 		1500D3C9128134FF00F2C0F9 /* input.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D3C7128134FF00F2C0F9 /* input.png */; };
 		1500D3CA128134FF00F2C0F9 /* input0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D3C8128134FF00F2C0F9 /* input0.png */; };
-		15154B6F120E7E0A0087A877 /* TNWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154B6E120E7E0A0087A877 /* TNWord.m */; };
 		15154C38120E905A0087A877 /* GWLPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154C37120E905A0087A877 /* GWLPage.m */; };
 		155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CA1346CA7F00F2322F /* GWLRun.m */; };
 		15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */; };
@@ -82,11 +81,14 @@
 		437BA4D71539412F00648AFC /* Cover_Doodle_5-Thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 437BA4C31539412F00648AFC /* Cover_Doodle_5-Thumb@2x.png */; };
 		437BA4D81539412F00648AFC /* Cover_Doodle_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 437BA4C41539412F00648AFC /* Cover_Doodle_5.png */; };
 		437BA4D91539412F00648AFC /* Cover_Doodle_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 437BA4C51539412F00648AFC /* Cover_Doodle_5@2x.png */; };
+		437BA504153C019A00648AFC /* Note+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 437BA503153C019A00648AFC /* Note+Methods.m */; };
+		437BA508153C024B00648AFC /* TNWord+Methods.m in Sources */ = {isa = PBXBuildFile; fileRef = 437BA507153C024B00648AFC /* TNWord+Methods.m */; };
+		437BA511153C037600648AFC /* TNWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 437BA510153C037600648AFC /* TNWord.m */; };
+		437BA514153C0A2B00648AFC /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 437BA513153C0A2A00648AFC /* Note.m */; };
 		437F5F451533E7C500A0228F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437F5F441533E7C500A0228F /* MainStoryboard.storyboard */; };
 		437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5F50153408C700A0228F /* TNHandWritingController.m */; };
 		437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FAE153724CB00A0228F /* BookshelfViewController.m */; };
 		437F5FB2153726C200A0228F /* PageSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FB1153726C100A0228F /* PageSegue.m */; };
-		43D140A215380DBA00210B63 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D140A115380DBA00210B63 /* Note.m */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BD438F8C14A675EA00060338 /* popoverbackground.png */; };
 		BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */; };
@@ -108,8 +110,6 @@
 		1500D35A12810D5700F2C0F9 /* todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = todo.m; path = doc/todo.m; sourceTree = "<group>"; };
 		1500D3C7128134FF00F2C0F9 /* input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input.png; sourceTree = "<group>"; };
 		1500D3C8128134FF00F2C0F9 /* input0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input0.png; sourceTree = "<group>"; };
-		15154B6D120E7E0A0087A877 /* TNWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNWord.h; path = Classes/TNWord.h; sourceTree = "<group>"; };
-		15154B6E120E7E0A0087A877 /* TNWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNWord.m; path = Classes/TNWord.m; sourceTree = "<group>"; };
 		15154C36120E905A0087A877 /* GWLPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLPage.h; path = Classes/GWLPage.h; sourceTree = "<group>"; };
 		15154C37120E905A0087A877 /* GWLPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLPage.m; path = Classes/GWLPage.m; sourceTree = "<group>"; };
 		155E19CA1346CA7F00F2322F /* GWLRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLRun.m; path = Classes/GWLRun.m; sourceTree = "<group>"; };
@@ -190,6 +190,14 @@
 		437BA4C31539412F00648AFC /* Cover_Doodle_5-Thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cover_Doodle_5-Thumb@2x.png"; path = "Images/Cover_Doodle_5-Thumb@2x.png"; sourceTree = "<group>"; };
 		437BA4C41539412F00648AFC /* Cover_Doodle_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cover_Doodle_5.png; path = Images/Cover_Doodle_5.png; sourceTree = "<group>"; };
 		437BA4C51539412F00648AFC /* Cover_Doodle_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cover_Doodle_5@2x.png"; path = "Images/Cover_Doodle_5@2x.png"; sourceTree = "<group>"; };
+		437BA502153C019A00648AFC /* Note+Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Note+Methods.h"; path = "Classes/Note+Methods.h"; sourceTree = "<group>"; };
+		437BA503153C019A00648AFC /* Note+Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Note+Methods.m"; path = "Classes/Note+Methods.m"; sourceTree = "<group>"; };
+		437BA506153C024B00648AFC /* TNWord+Methods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TNWord+Methods.h"; path = "Classes/TNWord+Methods.h"; sourceTree = "<group>"; };
+		437BA507153C024B00648AFC /* TNWord+Methods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TNWord+Methods.m"; path = "Classes/TNWord+Methods.m"; sourceTree = "<group>"; };
+		437BA50F153C037600648AFC /* TNWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNWord.h; path = Classes/TNWord.h; sourceTree = "<group>"; };
+		437BA510153C037600648AFC /* TNWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNWord.m; path = Classes/TNWord.m; sourceTree = "<group>"; };
+		437BA512153C0A2A00648AFC /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Classes/Note.h; sourceTree = "<group>"; };
+		437BA513153C0A2A00648AFC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Classes/Note.m; sourceTree = "<group>"; };
 		437F5F441533E7C500A0228F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = Classes/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		437F5F4F153408C700A0228F /* TNHandWritingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNHandWritingController.h; path = Classes/TNHandWritingController.h; sourceTree = "<group>"; };
 		437F5F50153408C700A0228F /* TNHandWritingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNHandWritingController.m; path = Classes/TNHandWritingController.m; sourceTree = "<group>"; };
@@ -197,8 +205,6 @@
 		437F5FAE153724CB00A0228F /* BookshelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookshelfViewController.m; path = Classes/BookshelfViewController.m; sourceTree = "<group>"; };
 		437F5FB0153726C100A0228F /* PageSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageSegue.h; path = Classes/PageSegue.h; sourceTree = "<group>"; };
 		437F5FB1153726C100A0228F /* PageSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageSegue.m; path = Classes/PageSegue.m; sourceTree = "<group>"; };
-		43D140A015380DBA00210B63 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Classes/Note.h; sourceTree = "<group>"; };
-		43D140A115380DBA00210B63 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Classes/Note.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F8C14A675EA00060338 /* popoverbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverbackground.png; sourceTree = "<group>"; };
@@ -267,8 +273,6 @@
 				155E19CA1346CA7F00F2322F /* GWLRun.m */,
 				15154C36120E905A0087A877 /* GWLPage.h */,
 				15154C37120E905A0087A877 /* GWLPage.m */,
-				15154B6D120E7E0A0087A877 /* TNWord.h */,
-				15154B6E120E7E0A0087A877 /* TNWord.m */,
 			);
 			name = engine;
 			sourceTree = "<group>";
@@ -300,9 +304,15 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				43D140A015380DBA00210B63 /* Note.h */,
-				43D140A115380DBA00210B63 /* Note.m */,
 				BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */,
+				437BA512153C0A2A00648AFC /* Note.h */,
+				437BA513153C0A2A00648AFC /* Note.m */,
+				437BA50F153C037600648AFC /* TNWord.h */,
+				437BA510153C037600648AFC /* TNWord.m */,
+				437BA502153C019A00648AFC /* Note+Methods.h */,
+				437BA503153C019A00648AFC /* Note+Methods.m */,
+				437BA506153C024B00648AFC /* TNWord+Methods.h */,
+				437BA507153C024B00648AFC /* TNWord+Methods.m */,
 				BDDBEEE814A60F6F008FD0BE /* MobClick.h */,
 				155E19D01346CA8800F2322F /* common.h */,
 				32CA4F630368D1EE00C91783 /* Tiny4Note_Prefix.pch */,
@@ -635,7 +645,6 @@
 				28D7ACF80DDB3853001CB0EB /* MainViewController.m in Sources */,
 				15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */,
 				15D60996120A830F006D2D77 /* TNNoteView.m in Sources */,
-				15154B6F120E7E0A0087A877 /* TNWord.m in Sources */,
 				15154C38120E905A0087A877 /* GWLPage.m in Sources */,
 				1500D35B12810D5700F2C0F9 /* todo.m in Sources */,
 				BDBEAA21133D8568001623A0 /* ImageBackgroundNavigationBar.m in Sources */,
@@ -647,7 +656,10 @@
 				437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */,
 				437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */,
 				437F5FB2153726C200A0228F /* PageSegue.m in Sources */,
-				43D140A215380DBA00210B63 /* Note.m in Sources */,
+				437BA504153C019A00648AFC /* Note+Methods.m in Sources */,
+				437BA508153C024B00648AFC /* TNWord+Methods.m in Sources */,
+				437BA511153C037600648AFC /* TNWord.m in Sources */,
+				437BA514153C0A2B00648AFC /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

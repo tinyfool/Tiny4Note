@@ -7,7 +7,7 @@
 //
 
 #import "GWLPage.h"
-#import "TNWord.h"
+#import "TNWord+Methods.h"
 #import "GWLRun.h"
 
 @interface GWLPostion : NSObject {

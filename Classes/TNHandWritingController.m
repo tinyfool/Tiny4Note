@@ -16,6 +16,7 @@
 
 @implementation TNHandWritingController
 @synthesize delegate = _delegate;
+@synthesize managedObjectContext = _managedObjectContext;
 @synthesize writingWin1 = _writingWin1;
 @synthesize writingWin2 = _writingWin2;
 @synthesize currentWord = _currentWord;
@@ -34,7 +35,7 @@
         [self finishWriting];
         
         //new word
-        TNWord *newWord = [[TNWord alloc] init];
+        TNWord *newWord = [NSEntityDescription insertNewObjectForEntityForName:@"TNWord" inManagedObjectContext:self.managedObjectContext];
         newWord.oSize = handWritingView.frame.size;
         newWord.size = CGSizeMake(40, 40);        
         newWord.lines = handWritingView.lines;
@@ -71,7 +72,7 @@
 - (void)insertSpaceWord
 {
     [self finishWriting];
-    TNWord* word = [[TNWord alloc] init];
+    TNWord* word = [NSEntityDescription insertNewObjectForEntityForName:@"TNWord" inManagedObjectContext:self.managedObjectContext];
 	word.size = CGSizeMake(sizeofword, sizeofword);
 	word.wordType = WordTypeSpace;
     [self.delegate handWritingController:self didFinishWord:word];
@@ -81,7 +82,7 @@
 {
     [self finishWriting];
     
-    TNWord* word = [[TNWord alloc] init];
+    TNWord* word = [NSEntityDescription insertNewObjectForEntityForName:@"TNWord" inManagedObjectContext:self.managedObjectContext];
 	word.size = CGSizeMake(sizeofword, sizeofword);
 	word.wordType = WordTypeCrLf;
     [self.delegate handWritingController:self didFinishWord:word];

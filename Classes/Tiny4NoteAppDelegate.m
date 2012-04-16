@@ -25,6 +25,17 @@
     [MobClick setDelegate:self reportPolicy:BATCH];
 	return YES;
 }
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    if ([self.managedObjectContext hasChanges]) {
+        __autoreleasing NSError *error;
+        BOOL success = [self.managedObjectContext save:&error];
+        if (!success) {
+            NSLog(@"%@",[error description]);
+        }
+    }
+}
 - (void) initNotebook {
     
     NSManagedObjectContext *context = [self managedObjectContext];

@@ -14,6 +14,7 @@
 @end
 
 @implementation MainViewController
+@synthesize managedObjectContext = _managedObjectContext;
 @synthesize note = _note;
 @synthesize paperImageView = _paperImageView;
 @synthesize coverImageView = _coverImageView;
@@ -69,6 +70,9 @@
     self.paperImageView.image = [UIImage imageNamed:[self.note.paperName stringByAppendingString:@".png"]];
     self.coverImageView.image = [UIImage imageNamed:[self.note.coverName stringByAppendingString:@".png"]];
     self.coverImageView.frame = self.view.bounds;
+    
+    self.handWritingController.managedObjectContext = self.managedObjectContext;
+    self.noteView.words = [self.note.words array];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -181,6 +185,7 @@
 {
     if (word) {
 		[self.noteView addNewWord:word];
+        [self.note addWordsObject:word];
 	}
 //    if (word && word.wordType != WordTypeNormal) {
 //        [self.noteView addNewWord:word];

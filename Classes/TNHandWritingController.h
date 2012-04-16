@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TNWord.h"
+#import "TNWord+Methods.h"
 #import "TNHandWritingView.h"
 
 @protocol TNHandWritingControllerDelegate;
 
 @interface TNHandWritingController : NSObject <TDHandWritingViewDeleage>
 @property (nonatomic, weak) IBOutlet id<TNHandWritingControllerDelegate> delegate;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @property (nonatomic, strong) IBOutlet TNHandWritingView *writingWin1;
 @property (nonatomic, strong) IBOutlet TNHandWritingView *writingWin2;
