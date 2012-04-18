@@ -85,10 +85,12 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	
-	if ([self.currentLine count]>0) {
-		[self setNeedsDisplay];
-	}
+	UITouch* touch = [touches anyObject];
+	CGPoint point = [touch locationInView:self];
+	[self.currentLine addObject:[NSValue valueWithCGPoint:point]];
+
+    [self.delegate handWritingViewDidEndWriting:self];
+    [self setNeedsDisplay];
 } 
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
