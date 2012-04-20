@@ -72,7 +72,7 @@
     self.coverImageView.frame = self.view.bounds;
     
     self.handWritingController.managedObjectContext = self.managedObjectContext;
-    self.noteView.words = [self.note.words array];
+    self.noteView.words = [[self.note.words array] mutableCopy];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -158,7 +158,9 @@
 //点击回退键
 -(IBAction)buttonBackSpaceClick:(id)sender {
     
-	[self.noteView backAWord];
+//	[self.noteView backAWord];
+    [self.handWritingController finishWriting];
+    [self.noteView removeLastWord];
 }
 
 //点击空格键
@@ -174,23 +176,24 @@
 #pragma mark HandWritingController Delegate
 - (void)handWritingController:(TNHandWritingController *)controller didStartCreatingWord:(TNWord *)word
 {
+    if (word) {
+		[self.noteView addWord:word];
+        [self.note addWordsObject:word];
+	}
 }
 
 - (void)handWritingController:(TNHandWritingController *)controller didModifyWord:(TNWord *)word
 {
-//    [self.noteView setNeedsDisplay];
+    [self.noteView updateWord:word];
 }
 
 - (void)handWritingController:(TNHandWritingController *)controller didFinishWord:(TNWord *)word
 {
-    if (word) {
-		[self.noteView addNewWord:word];
-        [self.note addWordsObject:word];
-	}
-//    if (word && word.wordType != WordTypeNormal) {
-//        [self.noteView addNewWord:word];
-//        
-//    }
+    
+    if (word && word.wordType != WordTypeNormal) {
+        [self.noteView addWord:word];
+        
+    }
     
 }
 @end

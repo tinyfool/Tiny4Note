@@ -52,6 +52,10 @@
 
 #pragma mark -
 @implementation TNWord (Drawing)
+- (CGRect)frame
+{
+    return CGRectMake(self.pos.x, self.pos.y, self.size.width, self.size.height);
+}
 
 - (void)drawAtPoint:(CGPoint)spoint
 {
@@ -64,8 +68,8 @@
         CGPoint *points = malloc(num * sizeof(CGPoint));
         for (int i =0; i< num; i++) {
             CGPoint point = [[line objectAtIndex:i] CGPointValue];
-            point.x = emptySizeX + spoint.x + point.x * yinzi;
-            point.y = emptySizeY + spoint.y + point.y * yinzi;
+            point.x = spoint.x + point.x * yinzi;
+            point.y = spoint.y + point.y * yinzi;
             points[i] = point;
         }
         CGContextAddLines(ctx, points, num);

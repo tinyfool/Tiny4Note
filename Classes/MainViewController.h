@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TNHandWritingView.h"
 #import "TNHandWritingController.h"
-#import "TNNoteView.h"
+//#import "TNNoteView.h"
+#import "NoteView.h"
 
 @class ImageBackgroundNavigationBar;
 @class Note;
@@ -22,7 +23,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *paperImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
-@property (nonatomic, strong) IBOutlet TNNoteView *noteView;
+@property (nonatomic, strong) IBOutlet NoteView *noteView;
 @property (nonatomic, strong) IBOutlet ImageBackgroundNavigationBar *nav;
 
 @property (nonatomic,retain) UIPopoverController* popover;

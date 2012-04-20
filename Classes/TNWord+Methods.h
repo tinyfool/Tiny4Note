@@ -13,5 +13,6 @@
 @end
 
 @interface TNWord (Drawing)
+- (CGRect)frame;
 - (void)drawAtPoint:(CGPoint)spoint;
 @end
