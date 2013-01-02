@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSArray *words;
 @property (nonatomic, strong) id ctFrame;
 
+@property (nonatomic, assign) CGPoint currentPos;
 @end

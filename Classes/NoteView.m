@@ -7,13 +7,11 @@
 //
 
 #import "NoteView.h"
-#import "PageEngine.h"
 #import "TNWord+Methods.h"
 #import "TNNote.h"
 
 @interface NoteView()
 @property (nonatomic, strong) UIImageView *insertMark;
-@property (nonatomic, strong) PageEngine *pageEngine;
 
 @property (nonatomic, strong) TNNote *note;
 
@@ -23,7 +21,6 @@
 @synthesize words = _words;
 @synthesize insertMark = _insertMark;
 @synthesize selectedRange = _selectedRange;
-@synthesize pageEngine = _pageEngine;
 
 - (void)commInit
 {
@@ -37,10 +34,7 @@
     [_insertMark startAnimating];
     
     [self addSubview:_insertMark];
-    
-    _pageEngine = [[PageEngine alloc] init];
-    _pageEngine.size = self.bounds.size;
-    
+        
     _note = [[TNNote alloc] init];
 }
 
@@ -142,7 +136,6 @@
 - (void)addWord:(TNWord *)word
 {
     [self.words addObject:word];
-    [self.pageEngine typesetWords:self.words];
     self.selectedRange = NSMakeRange([self.words indexOfObject:word], 0);
     [self setNeedsDisplayInRect:word.frame];
 }

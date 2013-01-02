@@ -10,11 +10,8 @@
 		1500D35B12810D5700F2C0F9 /* todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1500D35A12810D5700F2C0F9 /* todo.m */; };
 		1500D3C9128134FF00F2C0F9 /* input.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D3C7128134FF00F2C0F9 /* input.png */; };
 		1500D3CA128134FF00F2C0F9 /* input0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D3C8128134FF00F2C0F9 /* input0.png */; };
-		15154C38120E905A0087A877 /* GWLPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154C37120E905A0087A877 /* GWLPage.m */; };
-		155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CA1346CA7F00F2322F /* GWLRun.m */; };
 		15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */; };
 		15D60985120A7F49006D2D77 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D60984120A7F49006D2D77 /* back1.png */; };
-		15D60996120A830F006D2D77 /* TNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D60995120A830F006D2D77 /* TNNoteView.m */; };
 		1D3623260D0F684500981E51 /* Tiny4NoteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* Tiny4NoteAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -89,13 +86,11 @@
 		437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5F50153408C700A0228F /* TNHandWritingController.m */; };
 		437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FAE153724CB00A0228F /* BookshelfViewController.m */; };
 		437F5FB2153726C200A0228F /* PageSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FB1153726C100A0228F /* PageSegue.m */; };
-		43AE79F51541386300DAC190 /* GWLLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79F11541386300DAC190 /* GWLLine.m */; };
-		43AE79F61541386300DAC190 /* GWLParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79F31541386300DAC190 /* GWLParagraph.m */; };
 		43AE79FA154138A800DAC190 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79F9154138A800DAC190 /* NoteView.m */; };
-		43AE79FD15414B7C00DAC190 /* PageEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79FC15414B7C00DAC190 /* PageEngine.m */; };
 		43F2AE801694AED900667AAF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F2AE7F1694AED900667AAF /* CoreText.framework */; };
 		43F2AE9A1694B13700667AAF /* TNNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AE991694B13700667AAF /* TNNote.m */; };
 		43F2AE9D1694B43800667AAF /* TNNotePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AE9C1694B43800667AAF /* TNNotePage.m */; };
+		43F2AEA91694C48500667AAF /* TNNotePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AEA81694C48500667AAF /* TNNotePageView.m */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BD438F8C14A675EA00060338 /* popoverbackground.png */; };
 		BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */; };
@@ -117,16 +112,10 @@
 		1500D35A12810D5700F2C0F9 /* todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = todo.m; path = doc/todo.m; sourceTree = "<group>"; };
 		1500D3C7128134FF00F2C0F9 /* input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input.png; sourceTree = "<group>"; };
 		1500D3C8128134FF00F2C0F9 /* input0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = input0.png; sourceTree = "<group>"; };
-		15154C36120E905A0087A877 /* GWLPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLPage.h; path = Classes/GWLPage.h; sourceTree = "<group>"; };
-		15154C37120E905A0087A877 /* GWLPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLPage.m; path = Classes/GWLPage.m; sourceTree = "<group>"; };
-		155E19CA1346CA7F00F2322F /* GWLRun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLRun.m; path = Classes/GWLRun.m; sourceTree = "<group>"; };
-		155E19CB1346CA7F00F2322F /* GWLRun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLRun.h; path = Classes/GWLRun.h; sourceTree = "<group>"; };
 		155E19D01346CA8800F2322F /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = Classes/common.h; sourceTree = "<group>"; };
 		15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNHandWritingView.m; path = Classes/TNHandWritingView.m; sourceTree = "<group>"; };
 		15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNHandWritingView.h; path = Classes/TNHandWritingView.h; sourceTree = "<group>"; };
 		15D60984120A7F49006D2D77 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
-		15D60994120A830F006D2D77 /* TNNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNNoteView.h; path = Classes/TNNoteView.h; sourceTree = "<group>"; };
-		15D60995120A830F006D2D77 /* TNNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNNoteView.m; path = Classes/TNNoteView.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Tiny4NoteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tiny4NoteAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Tiny4NoteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tiny4NoteAppDelegate.m; sourceTree = "<group>"; };
@@ -212,21 +201,15 @@
 		437F5FAE153724CB00A0228F /* BookshelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookshelfViewController.m; path = Classes/BookshelfViewController.m; sourceTree = "<group>"; };
 		437F5FB0153726C100A0228F /* PageSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageSegue.h; path = Classes/PageSegue.h; sourceTree = "<group>"; };
 		437F5FB1153726C100A0228F /* PageSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageSegue.m; path = Classes/PageSegue.m; sourceTree = "<group>"; };
-		43AE79EE1541386300DAC190 /* GWLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLDocument.h; sourceTree = "<group>"; };
-		43AE79EF1541386300DAC190 /* GWLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLDocument.m; sourceTree = "<group>"; };
-		43AE79F01541386300DAC190 /* GWLLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLLine.h; sourceTree = "<group>"; };
-		43AE79F11541386300DAC190 /* GWLLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLLine.m; sourceTree = "<group>"; };
-		43AE79F21541386300DAC190 /* GWLParagraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWLParagraph.h; sourceTree = "<group>"; };
-		43AE79F31541386300DAC190 /* GWLParagraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWLParagraph.m; sourceTree = "<group>"; };
 		43AE79F8154138A800DAC190 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteView.h; path = Classes/NoteView.h; sourceTree = "<group>"; };
 		43AE79F9154138A800DAC190 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteView.m; path = Classes/NoteView.m; sourceTree = "<group>"; };
-		43AE79FB15414B7C00DAC190 /* PageEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageEngine.h; path = Classes/PageEngine.h; sourceTree = "<group>"; };
-		43AE79FC15414B7C00DAC190 /* PageEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageEngine.m; path = Classes/PageEngine.m; sourceTree = "<group>"; };
 		43F2AE7F1694AED900667AAF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		43F2AE981694B13700667AAF /* TNNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNote.h; sourceTree = "<group>"; };
 		43F2AE991694B13700667AAF /* TNNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNote.m; sourceTree = "<group>"; };
 		43F2AE9B1694B43800667AAF /* TNNotePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNotePage.h; sourceTree = "<group>"; };
 		43F2AE9C1694B43800667AAF /* TNNotePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNotePage.m; sourceTree = "<group>"; };
+		43F2AEA71694C48500667AAF /* TNNotePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNotePageView.h; sourceTree = "<group>"; };
+		43F2AEA81694C48500667AAF /* TNNotePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNotePageView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F8C14A675EA00060338 /* popoverbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverbackground.png; sourceTree = "<group>"; };
@@ -289,23 +272,6 @@
 			name = doc;
 			sourceTree = "<group>";
 		};
-		15154C3F120E90610087A877 /* engine */ = {
-			isa = PBXGroup;
-			children = (
-				43AE79EE1541386300DAC190 /* GWLDocument.h */,
-				43AE79EF1541386300DAC190 /* GWLDocument.m */,
-				43AE79F01541386300DAC190 /* GWLLine.h */,
-				43AE79F11541386300DAC190 /* GWLLine.m */,
-				43AE79F21541386300DAC190 /* GWLParagraph.h */,
-				43AE79F31541386300DAC190 /* GWLParagraph.m */,
-				155E19CB1346CA7F00F2322F /* GWLRun.h */,
-				155E19CA1346CA7F00F2322F /* GWLRun.m */,
-				15154C36120E905A0087A877 /* GWLPage.h */,
-				15154C37120E905A0087A877 /* GWLPage.m */,
-			);
-			name = engine;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,7 +286,6 @@
 				BD8AC79214A63D0900E65AA7 /* UI Classes */,
 				43F2AE971694B0EB00667AAF /* TNEngine */,
 				1500D35912810D3500F2C0F9 /* doc */,
-				15154C3F120E90610087A877 /* engine */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -399,12 +364,10 @@
 		437F5F4E1534049F00A0228F /* Note View */ = {
 			isa = PBXGroup;
 			children = (
-				15D60994120A830F006D2D77 /* TNNoteView.h */,
-				15D60995120A830F006D2D77 /* TNNoteView.m */,
+				43F2AEA71694C48500667AAF /* TNNotePageView.h */,
+				43F2AEA81694C48500667AAF /* TNNotePageView.m */,
 				43AE79F8154138A800DAC190 /* NoteView.h */,
 				43AE79F9154138A800DAC190 /* NoteView.m */,
-				43AE79FB15414B7C00DAC190 /* PageEngine.h */,
-				43AE79FC15414B7C00DAC190 /* PageEngine.m */,
 			);
 			name = "Note View";
 			sourceTree = "<group>";
@@ -690,11 +653,8 @@
 				1D3623260D0F684500981E51 /* Tiny4NoteAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* MainViewController.m in Sources */,
 				15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */,
-				15D60996120A830F006D2D77 /* TNNoteView.m in Sources */,
-				15154C38120E905A0087A877 /* GWLPage.m in Sources */,
 				1500D35B12810D5700F2C0F9 /* todo.m in Sources */,
 				BDBEAA21133D8568001623A0 /* ImageBackgroundNavigationBar.m in Sources */,
-				155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */,
 				BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */,
 				BD8AC79614A63DA800E65AA7 /* NoteBookTableViewController.m in Sources */,
 				BD8AC7A014A65B3600E65AA7 /* Tiny4NotePopoverBackgroundView.m in Sources */,
@@ -706,12 +666,10 @@
 				437BA508153C024B00648AFC /* TNWord+Methods.m in Sources */,
 				437BA511153C037600648AFC /* TNWord.m in Sources */,
 				437BA514153C0A2B00648AFC /* Note.m in Sources */,
-				43AE79F51541386300DAC190 /* GWLLine.m in Sources */,
-				43AE79F61541386300DAC190 /* GWLParagraph.m in Sources */,
 				43AE79FA154138A800DAC190 /* NoteView.m in Sources */,
-				43AE79FD15414B7C00DAC190 /* PageEngine.m in Sources */,
 				43F2AE9A1694B13700667AAF /* TNNote.m in Sources */,
 				43F2AE9D1694B43800667AAF /* TNNotePage.m in Sources */,
+				43F2AEA91694C48500667AAF /* TNNotePageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
