@@ -113,7 +113,11 @@
     _words = words;
     
     [self.pageEngine typesetWords:words];
-    self.selectedRange = NSMakeRange([words count]-1, 0);
+    if (words.count > 0) {
+        self.selectedRange = NSMakeRange([words count]-1, 0);
+    } else {
+        self.selectedRange = NSMakeRange(NSNotFound, 0);
+    }
     [self setNeedsDisplay];
 }
 
