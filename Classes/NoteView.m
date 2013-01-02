@@ -9,10 +9,14 @@
 #import "NoteView.h"
 #import "PageEngine.h"
 #import "TNWord+Methods.h"
+#import "TNNote.h"
 
 @interface NoteView()
 @property (nonatomic, strong) UIImageView *insertMark;
 @property (nonatomic, strong) PageEngine *pageEngine;
+
+@property (nonatomic, strong) TNNote *note;
+
 @end
 
 @implementation NoteView
@@ -36,7 +40,8 @@
     
     _pageEngine = [[PageEngine alloc] init];
     _pageEngine.size = self.bounds.size;
-
+    
+    _note = [[TNNote alloc] init];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -74,9 +79,14 @@
 
 - (void)drawWords:(NSArray *)words
 {
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+    CGContextSaveGState(ctx);
+    CGContextTranslateCTM(ctx, 0, -self.bounds.size.height);
     for (TNWord *word in words) {
         [word drawAtPoint:word.pos];
     }
+    CGContextRestoreGState(ctx);
 }
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -112,7 +122,9 @@
 {
     _words = words;
     
-    [self.pageEngine typesetWords:words];
+//    self.note.words = words;
+//    [self.note pagesWithSize:self.bounds.size];
+//    [self.pageEngine typesetWords:words];
     if (words.count > 0) {
         self.selectedRange = NSMakeRange([words count]-1, 0);
     } else {

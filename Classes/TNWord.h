@@ -24,4 +24,5 @@
 @property CGPoint pos;
 @property int wordId;
 
+@property (nonatomic, assign) CGPoint position;
 @end

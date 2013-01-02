@@ -9,7 +9,11 @@
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Note.h"
+#import "TNNote.h"
+#import "TNNotePage.h"
+
 @interface MainViewController ()
+@property (nonatomic, strong) TNNote *nNote;
 
 @end
 
@@ -36,24 +40,6 @@
 
 #pragma mark - 标准View处理
 
-/*
- // The designated initializer. Override to perform setup that is required before the view is loaded.
- - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
- if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
- // Custom initialization
- }
- return self;
- }
- */
-
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView {
- }
- */
-
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,7 +58,12 @@
     self.coverImageView.frame = self.view.bounds;
     
     self.handWritingController.managedObjectContext = self.managedObjectContext;
-    self.noteView.words = [[self.note.words array] mutableCopy];
+    
+    TNNote *note = [[TNNote alloc] init];
+    note.words = [[self.note.words array] mutableCopy];
+    NSArray *pages = [note pagesWithSize:self.noteView.bounds.size];
+    TNNotePage *page = pages.count > 0 ? pages[0] : nil;
+    self.noteView.words = [page.words mutableCopy];
 }
 
 - (void)viewWillAppear:(BOOL)animated

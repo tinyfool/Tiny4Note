@@ -94,6 +94,8 @@
 		43AE79FA154138A800DAC190 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79F9154138A800DAC190 /* NoteView.m */; };
 		43AE79FD15414B7C00DAC190 /* PageEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79FC15414B7C00DAC190 /* PageEngine.m */; };
 		43F2AE801694AED900667AAF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F2AE7F1694AED900667AAF /* CoreText.framework */; };
+		43F2AE9A1694B13700667AAF /* TNNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AE991694B13700667AAF /* TNNote.m */; };
+		43F2AE9D1694B43800667AAF /* TNNotePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AE9C1694B43800667AAF /* TNNotePage.m */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BD438F8C14A675EA00060338 /* popoverbackground.png */; };
 		BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */; };
@@ -221,6 +223,10 @@
 		43AE79FB15414B7C00DAC190 /* PageEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageEngine.h; path = Classes/PageEngine.h; sourceTree = "<group>"; };
 		43AE79FC15414B7C00DAC190 /* PageEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageEngine.m; path = Classes/PageEngine.m; sourceTree = "<group>"; };
 		43F2AE7F1694AED900667AAF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		43F2AE981694B13700667AAF /* TNNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNote.h; sourceTree = "<group>"; };
+		43F2AE991694B13700667AAF /* TNNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNote.m; sourceTree = "<group>"; };
+		43F2AE9B1694B43800667AAF /* TNNotePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNotePage.h; sourceTree = "<group>"; };
+		43F2AE9C1694B43800667AAF /* TNNotePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNotePage.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F8C14A675EA00060338 /* popoverbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverbackground.png; sourceTree = "<group>"; };
@@ -312,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				BD8AC79214A63D0900E65AA7 /* UI Classes */,
+				43F2AE971694B0EB00667AAF /* TNEngine */,
 				1500D35912810D3500F2C0F9 /* doc */,
 				15154C3F120E90610087A877 /* engine */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -508,6 +515,17 @@
 			name = Doodle;
 			sourceTree = "<group>";
 		};
+		43F2AE971694B0EB00667AAF /* TNEngine */ = {
+			isa = PBXGroup;
+			children = (
+				43F2AE981694B13700667AAF /* TNNote.h */,
+				43F2AE991694B13700667AAF /* TNNote.m */,
+				43F2AE9B1694B43800667AAF /* TNNotePage.h */,
+				43F2AE9C1694B43800667AAF /* TNNotePage.m */,
+			);
+			name = TNEngine;
+			sourceTree = "<group>";
+		};
 		BD8AC79214A63D0900E65AA7 /* UI Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +710,8 @@
 				43AE79F61541386300DAC190 /* GWLParagraph.m in Sources */,
 				43AE79FA154138A800DAC190 /* NoteView.m in Sources */,
 				43AE79FD15414B7C00DAC190 /* PageEngine.m in Sources */,
+				43F2AE9A1694B13700667AAF /* TNNote.m in Sources */,
+				43F2AE9D1694B43800667AAF /* TNNotePage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
