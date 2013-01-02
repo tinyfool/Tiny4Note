@@ -93,6 +93,7 @@
 		43AE79F61541386300DAC190 /* GWLParagraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79F31541386300DAC190 /* GWLParagraph.m */; };
 		43AE79FA154138A800DAC190 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79F9154138A800DAC190 /* NoteView.m */; };
 		43AE79FD15414B7C00DAC190 /* PageEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79FC15414B7C00DAC190 /* PageEngine.m */; };
+		43F2AE801694AED900667AAF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F2AE7F1694AED900667AAF /* CoreText.framework */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BD438F8C14A675EA00060338 /* popoverbackground.png */; };
 		BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */; };
@@ -219,6 +220,7 @@
 		43AE79F9154138A800DAC190 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteView.m; path = Classes/NoteView.m; sourceTree = "<group>"; };
 		43AE79FB15414B7C00DAC190 /* PageEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageEngine.h; path = Classes/PageEngine.h; sourceTree = "<group>"; };
 		43AE79FC15414B7C00DAC190 /* PageEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageEngine.m; path = Classes/PageEngine.m; sourceTree = "<group>"; };
+		43F2AE7F1694AED900667AAF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F8C14A675EA00060338 /* popoverbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverbackground.png; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F2AE801694AED900667AAF /* CoreText.framework in Frameworks */,
 				BDDBEEF514A62F3F008FD0BE /* CoreData.framework in Frameworks */,
 				BDDBEEF014A60FCC008FD0BE /* QuartzCore.framework in Frameworks */,
 				BDDBEEEE14A60FC0008FD0BE /* SystemConfiguration.framework in Frameworks */,
@@ -361,6 +364,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43F2AE7F1694AED900667AAF /* CoreText.framework */,
 				BDDBEEF414A62F3F008FD0BE /* CoreData.framework */,
 				BDDBEEEF14A60FCC008FD0BE /* QuartzCore.framework */,
 				BDDBEEED14A60FC0008FD0BE /* SystemConfiguration.framework */,
