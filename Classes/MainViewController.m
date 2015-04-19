@@ -37,7 +37,7 @@
 	self.writingWin2.layer.masksToBounds = YES;
 	self.writingWin2.layer.borderWidth = 1.0;
 //    self.nav.backgroundImage = [UIImage imageNamed:@"toolbar.png"];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(didPressedBackButton:)];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(didPressedBackButton:)];
     
     self.paperImageView.image = [UIImage imageNamed:[self.note.paperName stringByAppendingString:@".png"]];
     self.coverImageView.image = [UIImage imageNamed:[self.note.coverName stringByAppendingString:@".png"]];
@@ -84,6 +84,7 @@
         [self.textView becomeFirstResponder];
     }
 }
+
 - (void)handle_keyboardWillShown:(NSNotification *)notification
 {
     NSDictionary *userInfo = [notification userInfo];
@@ -193,6 +194,11 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self saveData];
+}
 #pragma mark - Note View
 
 
@@ -254,7 +260,7 @@
 - (void)handWritingController:(TNHandWritingController *)controller didModifyWord:(TNWord *)word
 {
 
-    [self requestRedrawAttachment:self.currentAttachment];
+//    [self requestRedrawAttachment:self.currentAttachment];
 
 }
 
