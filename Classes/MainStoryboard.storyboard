@@ -67,7 +67,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="KXe-qD-MKP">
-                        <barButtonItem key="rightBarButtonItem" title="New" id="UYZ-eS-AAh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UYZ-eS-AAh">
                             <connections>
                                 <action selector="didPressedNewButton:" destination="8Kr-Z0-9Zs" id="j1q-MK-iNc"/>
                             </connections>
@@ -181,7 +181,6 @@
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="29o-Lc-dCT">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.52156865600000002" green="0.36862745879999997" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
