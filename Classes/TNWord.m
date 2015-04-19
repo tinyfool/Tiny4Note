@@ -63,10 +63,16 @@
     
     UIGraphicsBeginImageContextWithOptions(imageBounds.size, NO, 0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextScaleCTM(ctx, 40/imageBounds.size.width, 40/imageBounds.size.height);
+    
+    CGFloat scale = imageBounds.size.width/sizeofboard;
+    CGContextScaleCTM(ctx, scale,scale);
+    
     NSTextStorage *storage = textContainer.layoutManager.textStorage;
     UIColor *foregroundColor = [storage attribute:NSForegroundColorAttributeName atIndex:charIndex effectiveRange:nil];
     [foregroundColor set];
+    CGContextSetLineWidth(ctx, 10);
+    CGContextSetLineCap(ctx, kCGLineCapRound);
+    CGContextSetAllowsAntialiasing(ctx, true);
     
     [self drawAtPoint:CGPointZero];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

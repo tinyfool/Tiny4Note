@@ -17,14 +17,13 @@
 - (void)drawAtPoint:(CGPoint)spoint
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-	float yinzi = sizeofword/sizeofboard;
     for (NSArray *line in self.lines) {
         NSUInteger num = [line count];
         CGPoint *points = malloc(num * sizeof(CGPoint));
         for (int i =0; i< num; i++) {
             CGPoint point = [[line objectAtIndex:i] CGPointValue];
-            point.x = spoint.x + point.x * yinzi;
-            point.y = spoint.y + point.y * yinzi;
+            point.x = spoint.x + point.x;
+            point.y = spoint.y + point.y;
             points[i] = point;
         }
         CGContextAddLines(ctx, points, num);
