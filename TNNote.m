@@ -111,4 +111,30 @@ static CGFloat widthCallback( void* ref ){
         lineIndex ++;
     }
 }
+
+- (void)insertWord:(TNWord *)word atIndex:(NSInteger)index
+{
+    [self.words insertObject:word atIndex:index];
+}
+
+- (void)insertWords:(NSArray *)array atIndexes:(NSIndexSet *)indexes
+{
+    [self.words insertObjects:array atIndexes:indexes];
+}
+
+
+- (void)removeWordsAtIndexes:(NSIndexSet *)indexes
+{
+    [self.words removeObjectsAtIndexes:indexes];
+}
+
+- (void)appendWord:(TNWord *)word
+{
+    [self.words addObject:word];
+}
+
+- (void)removeLastWord
+{
+    [self.words removeLastObject];
+}
 @end

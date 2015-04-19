@@ -14,9 +14,13 @@
 
 @property (nonatomic, strong) NSMutableArray *words;
 
+@property (nonatomic, strong) NSMutableArray *pages;
 - (NSArray *)pagesWithSize:(CGSize)size;
 
 - (void)appendWord:(TNWord *)word;
 - (void)removeLastWord;
 
+- (void)insertWord:(TNWord *)word atIndex:(NSInteger)index;
+- (void)insertWords:(NSArray *)array atIndexes:(NSIndexSet *)indexes;
+- (void)removeWordsAtIndexes:(NSIndexSet *)indexes;
 @end
