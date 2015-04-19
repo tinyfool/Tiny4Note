@@ -20,6 +20,14 @@
 
 #pragma mark - 标准View处理
 
+- (NSDictionary *)defaultAttributes
+{
+    return @{
+             NSForegroundColorAttributeName:[UIColor blackColor],
+             NSFontAttributeName:[UIFont systemFontOfSize:40],
+             };
+}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,7 +52,7 @@
         NSAttributedString *att = [NSKeyedUnarchiver unarchiveObjectWithData:contents];
         self.textView.attributedText = att;
     } else {
-        self.textView.attributedText = [[NSMutableAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:40]}];
+        self.textView.attributedText = [[NSMutableAttributedString alloc] initWithString:@"" attributes:[self defaultAttributes]];
     }
 //    TNNote *note = [[TNNote alloc] init];
 //    note.words = [[self.note.words array] mutableCopy];
@@ -234,7 +242,8 @@
         
         NSMutableDictionary *attributes = nil;
         if (self.textView.textStorage.length == 0) {
-            attributes = [@{NSFontAttributeName:[UIFont systemFontOfSize:40]} mutableCopy];
+//            attributes = [@{NSFontAttributeName:[UIFont systemFontOfSize:40]} mutableCopy];
+            attributes = [[self defaultAttributes] mutableCopy];
             
         } else if (originRange.location == self.textView.textStorage.length) {
             attributes = [[[self.textView textStorage] attributesAtIndex:originRange.location-1 effectiveRange:nil] mutableCopy];
