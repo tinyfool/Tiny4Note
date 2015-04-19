@@ -11,7 +11,7 @@
 
 @class Note;
 
-@interface TNWord : NSObject <NSCoding>
+@interface TNWord : NSObject <NSCoding,NSTextAttachmentContainer>
 
 @property (nonatomic, retain) id lines;
 @property (nonatomic, assign) CGSize writingSize;

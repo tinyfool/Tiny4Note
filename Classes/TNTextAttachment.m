@@ -12,23 +12,12 @@
 @implementation TNTextAttachment
 - (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex
 {
-    return CGRectMake(0, 0, lineFrag.size.height, lineFrag.size.height);
+    return [self.word attachmentBoundsForTextContainer:textContainer proposedLineFragment:lineFrag glyphPosition:position characterIndex:charIndex];
 }
 
 - (UIImage *)imageForBounds:(CGRect)imageBounds textContainer:(NSTextContainer *)textContainer characterIndex:(NSUInteger)charIndex
 {
-    UIGraphicsBeginImageContextWithOptions(imageBounds.size, NO, 0);
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    CGContextScaleCTM(ctx, 40/imageBounds.size.width, 40/imageBounds.size.height);
-    NSTextStorage *storage = textContainer.layoutManager.textStorage;
-    UIColor *foregroundColor = [storage attribute:NSForegroundColorAttributeName atIndex:charIndex effectiveRange:nil];
-    [foregroundColor set];
-    
-    [self.word drawAtPoint:CGPointZero];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-
-    UIGraphicsEndImageContext();
-    return image;
+    return [self.word imageForBounds:imageBounds textContainer:textContainer characterIndex:charIndex];
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
