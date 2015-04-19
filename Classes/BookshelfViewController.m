@@ -35,7 +35,7 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Note"];
     // Configure the request's entity, and optionally its predicate.
@@ -154,5 +154,18 @@
 //    }
     [self.fetchedResultsController performFetch:nil];
     [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [tableView beginUpdates];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.managedObjectContext deleteObject:note];
+        [self.managedObjectContext save:nil];
+        [self.fetchedResultsController performFetch:nil];
+        [tableView endUpdates];
+    }
 }
 @end
