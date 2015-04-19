@@ -15,12 +15,6 @@
 @end
 
 @implementation TNHandWritingController
-@synthesize delegate = _delegate;
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize writingWin1 = _writingWin1;
-@synthesize writingWin2 = _writingWin2;
-@synthesize currentWord = _currentWord;
-@synthesize currentWritingView = _currentWritingView;
 
 - (void)awakeFromNib
 {
@@ -35,12 +29,11 @@
         [self finishWriting];
         
         //new word
-        TNWord *newWord = [NSEntityDescription insertNewObjectForEntityForName:@"TNWord" inManagedObjectContext:self.managedObjectContext];
-        newWord.oSize = handWritingView.frame.size;
-        newWord.size = CGSizeMake(40, 40);        
-        newWord.lines = handWritingView.lines;
-        self.currentWord = newWord;
-        [self.delegate handWritingController:self didStartCreatingWord:newWord];
+        TNWord *aWord = [[TNWord alloc] init];
+        aWord.writingSize = handWritingView.frame.size;
+        aWord.lines = handWritingView.lines;
+        self.currentWord = aWord;
+        [self.delegate handWritingController:self didStartCreatingWord:aWord];
     } else {
         //start modify current word
     }
@@ -67,25 +60,6 @@
         [self.currentWritingView clean];
         self.currentWritingView = nil;
     }
-}
-
-- (void)insertSpaceWord
-{
-    [self finishWriting];
-    TNWord* word = [NSEntityDescription insertNewObjectForEntityForName:@"TNWord" inManagedObjectContext:self.managedObjectContext];
-	word.size = CGSizeMake(sizeofword, sizeofword);
-	word.wordType = WordTypeSpace;
-    [self.delegate handWritingController:self didFinishWord:word];
-}
-
-- (void)insertReturnWord
-{
-    [self finishWriting];
-    
-    TNWord* word = [NSEntityDescription insertNewObjectForEntityForName:@"TNWord" inManagedObjectContext:self.managedObjectContext];
-	word.size = CGSizeMake(sizeofword, sizeofword);
-	word.wordType = WordTypeCrLf;
-    [self.delegate handWritingController:self didFinishWord:word];
 }
 
 @end

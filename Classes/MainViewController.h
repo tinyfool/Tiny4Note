@@ -10,7 +10,7 @@
 #import "TNHandWritingView.h"
 #import "TNHandWritingController.h"
 //#import "TNNoteView.h"
-#import "NoteView.h"
+//#import "NoteView.h"
 
 @class ImageBackgroundNavigationBar;
 @class Note;
@@ -45,7 +45,5 @@
 -(IBAction)buttonBackSpaceClick:(id)sender;
 -(IBAction)buttonSpaceClick:(id)sender;
 -(IBAction)buttonReturnClick:(id)sender;
--(IBAction)showNotes:(id)sender;
--(IBAction)addNote:(id)sender;
 @end
 

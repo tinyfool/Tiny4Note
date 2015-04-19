@@ -87,11 +87,7 @@
 		437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5F50153408C700A0228F /* TNHandWritingController.m */; };
 		437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FAE153724CB00A0228F /* BookshelfViewController.m */; };
 		437F5FB2153726C200A0228F /* PageSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 437F5FB1153726C100A0228F /* PageSegue.m */; };
-		43AE79FA154138A800DAC190 /* NoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43AE79F9154138A800DAC190 /* NoteView.m */; };
 		43F2AE801694AED900667AAF /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F2AE7F1694AED900667AAF /* CoreText.framework */; };
-		43F2AE9A1694B13700667AAF /* TNNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AE991694B13700667AAF /* TNNote.m */; };
-		43F2AE9D1694B43800667AAF /* TNNotePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AE9C1694B43800667AAF /* TNNotePage.m */; };
-		43F2AEA91694C48500667AAF /* TNNotePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F2AEA81694C48500667AAF /* TNNotePageView.m */; };
 		BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */ = {isa = PBXBuildFile; fileRef = BD3590C112904FC0007B19CD /* 项目文档.pages */; };
 		BD438F8D14A675EA00060338 /* popoverbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = BD438F8C14A675EA00060338 /* popoverbackground.png */; };
 		BD8AC79114A639F600E65AA7 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8AC78F14A639F600E65AA7 /* Model.xcdatamodeld */; };
@@ -204,15 +200,7 @@
 		437F5FAE153724CB00A0228F /* BookshelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookshelfViewController.m; path = Classes/BookshelfViewController.m; sourceTree = "<group>"; };
 		437F5FB0153726C100A0228F /* PageSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PageSegue.h; path = Classes/PageSegue.h; sourceTree = "<group>"; };
 		437F5FB1153726C100A0228F /* PageSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PageSegue.m; path = Classes/PageSegue.m; sourceTree = "<group>"; };
-		43AE79F8154138A800DAC190 /* NoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteView.h; path = Classes/NoteView.h; sourceTree = "<group>"; };
-		43AE79F9154138A800DAC190 /* NoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteView.m; path = Classes/NoteView.m; sourceTree = "<group>"; };
 		43F2AE7F1694AED900667AAF /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		43F2AE981694B13700667AAF /* TNNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNote.h; sourceTree = "<group>"; };
-		43F2AE991694B13700667AAF /* TNNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNote.m; sourceTree = "<group>"; };
-		43F2AE9B1694B43800667AAF /* TNNotePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNotePage.h; sourceTree = "<group>"; };
-		43F2AE9C1694B43800667AAF /* TNNotePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNotePage.m; sourceTree = "<group>"; };
-		43F2AEA71694C48500667AAF /* TNNotePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNNotePageView.h; sourceTree = "<group>"; };
-		43F2AEA81694C48500667AAF /* TNNotePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNNotePageView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tiny4Note-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		BD3590C112904FC0007B19CD /* 项目文档.pages */ = {isa = PBXFileReference; lastKnownFileType = file; name = "项目文档.pages"; path = "doc/项目文档.pages"; sourceTree = "<group>"; };
 		BD438F8C14A675EA00060338 /* popoverbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popoverbackground.png; sourceTree = "<group>"; };
@@ -367,10 +355,6 @@
 		437F5F4E1534049F00A0228F /* Note View */ = {
 			isa = PBXGroup;
 			children = (
-				43F2AEA71694C48500667AAF /* TNNotePageView.h */,
-				43F2AEA81694C48500667AAF /* TNNotePageView.m */,
-				43AE79F8154138A800DAC190 /* NoteView.h */,
-				43AE79F9154138A800DAC190 /* NoteView.m */,
 			);
 			name = "Note View";
 			sourceTree = "<group>";
@@ -484,10 +468,6 @@
 		43F2AE971694B0EB00667AAF /* TNEngine */ = {
 			isa = PBXGroup;
 			children = (
-				43F2AE981694B13700667AAF /* TNNote.h */,
-				43F2AE991694B13700667AAF /* TNNote.m */,
-				43F2AE9B1694B43800667AAF /* TNNotePage.h */,
-				43F2AE9C1694B43800667AAF /* TNNotePage.m */,
 				432D2BF31AE3C4B0004CC2DD /* TNTextAttachment.h */,
 				432D2BF41AE3C4B0004CC2DD /* TNTextAttachment.m */,
 			);
@@ -551,7 +531,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TN;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Shanghai Tiny Network";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tiny4Note" */;
@@ -674,10 +654,6 @@
 				437BA508153C024B00648AFC /* TNWord+Methods.m in Sources */,
 				437BA511153C037600648AFC /* TNWord.m in Sources */,
 				437BA514153C0A2B00648AFC /* Note.m in Sources */,
-				43AE79FA154138A800DAC190 /* NoteView.m in Sources */,
-				43F2AE9A1694B13700667AAF /* TNNote.m in Sources */,
-				43F2AE9D1694B43800667AAF /* TNNotePage.m in Sources */,
-				43F2AEA91694C48500667AAF /* TNNotePageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +710,8 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -752,7 +729,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;

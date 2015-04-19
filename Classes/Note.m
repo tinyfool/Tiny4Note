@@ -17,6 +17,6 @@
 @dynamic name;
 @dynamic paperName;
 @dynamic updatetime;
-@dynamic words;
+@dynamic contents;
 
 @end

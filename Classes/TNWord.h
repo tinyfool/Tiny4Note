@@ -11,18 +11,8 @@
 
 @class Note;
 
-@interface TNWord : NSManagedObject {
-}
+@interface TNWord : NSObject <NSCoding>
 
 @property (nonatomic, retain) id lines;
-@property (nonatomic, unsafe_unretained) WordType wordType;
-@property (nonatomic, retain) NSNumber * wordTypeObj;
-@property (nonatomic, retain) Note *note;
-
-@property CGSize oSize;
-@property CGSize size;
-@property CGPoint pos;
-@property int wordId;
-
-@property (nonatomic, assign) CGPoint position;
+@property (nonatomic, assign) CGSize writingSize;
 @end

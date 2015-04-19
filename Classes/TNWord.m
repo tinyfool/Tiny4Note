@@ -11,11 +11,28 @@
 
 
 @implementation TNWord
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
 
-@dynamic lines;
-@dynamic wordType;
-@dynamic wordTypeObj;
-@dynamic note;
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.lines forKey:@"lines"];
+    [aCoder encodeCGSize:self.writingSize forKey:@"writingSize"];
 
-@synthesize wordId,pos,size,oSize;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        _lines = [aDecoder decodeObjectForKey:@"lines"];
+        _writingSize = [aDecoder decodeCGSizeForKey:@"writingSize"];
+    }
+    return self;
+}
 @end

@@ -9,9 +9,6 @@
 #import "TNHandWritingView.h"
 
 @implementation TNHandWritingView
-@synthesize delegate = _delegate;
-@synthesize lines = _lines;
-@synthesize currentLine = _currentLine;
 
 - (id)initWithFrame:(CGRect)frame {
 	

@@ -9,12 +9,9 @@
 #import "MainViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Note.h"
-#import "TNNote.h"
-#import "TNNotePage.h"
 #import "TNTextAttachment.h"
 
 @interface MainViewController ()
-@property (nonatomic, strong) TNNote *nNote;
 @property (nonatomic, strong) TNTextAttachment *currentAttachment;
 @end
 
@@ -29,7 +26,6 @@
 
     self.textView.allowsEditingTextAttributes = YES;
     self.automaticallyAdjustsScrollViewInsets = YES;
-    self.textView.attributedText = [[NSMutableAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:40]}];
     
     [self.writingInputView removeFromSuperview];
     self.textView.inputView = self.writingInputView;
@@ -46,9 +42,16 @@
     self.paperImageView.image = [UIImage imageNamed:[self.note.paperName stringByAppendingString:@".png"]];
     self.coverImageView.image = [UIImage imageNamed:[self.note.coverName stringByAppendingString:@".png"]];
     self.coverImageView.frame = self.view.bounds;
+//    self.paperImageView.image = nil;
+//    self.coverImageView.image = nil;
     
-    self.handWritingController.managedObjectContext = self.managedObjectContext;
-    
+    NSData *contents = self.note.contents;
+    if (contents) {
+        NSAttributedString *att = [NSKeyedUnarchiver unarchiveObjectWithData:contents];
+        self.textView.attributedText = att;
+    } else {
+        self.textView.attributedText = [[NSMutableAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:40]}];
+    }
 //    TNNote *note = [[TNNote alloc] init];
 //    note.words = [[self.note.words array] mutableCopy];
 //    NSArray *pages = [note pagesWithSize:self.noteView.bounds.size];
@@ -73,11 +76,31 @@
     [inputAccessoryView addSubview:dismissButton];
     self.textView.inputAccessoryView = inputAccessoryView;
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handle_keyboardWillShown:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handle_keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    if (self.textView.textStorage.length == 0) {
+        [self.textView becomeFirstResponder];
+    }
+}
+- (void)handle_keyboardWillShown:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    CGRect keyboardFrame = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    self.textView.contentInset = UIEdgeInsetsMake(0, 0,keyboardFrame.size.height, 0);
+    
+}
+
+- (void)handle_keyboardWillHide:(NSNotification *)notification
+{
+    self.textView.contentInset = UIEdgeInsetsZero;
 }
 
 - (void)didPressedDismissButton:(UIButton *)button
 {
     [self.textView resignFirstResponder];
+    [self.handWritingController finishWriting];
 }
 
 - (BOOL)isHandWritingKeyboard
@@ -88,8 +111,10 @@
 {
     [self.textView resignFirstResponder];
 
+
     if ([self isHandWritingKeyboard]) {
         self.textView.inputView = nil;
+        [self.handWritingController finishWriting];
     } else {
         self.textView.inputView = self.writingInputView;
     }
@@ -111,8 +136,16 @@
     return UIRectEdgeNone;
 }
 
+- (void)saveData
+{
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.textView.attributedText];
+    self.note.contents = data;
+    [self.managedObjectContext save:nil];
+}
 - (void)didPressedBackButton:(id)sender
 {
+    [self saveData];
+    
     MainViewController *noteVc = self;
     UIViewController *bookshelfVc = [noteVc.navigationController.viewControllers objectAtIndex:0];
 
@@ -177,12 +210,13 @@
 
 //点击空格键
 -(IBAction)buttonSpaceClick:(id)sender {
+    [self.handWritingController finishWriting];
     [self.textView insertText:@" "];
 }
 
 //点击回车键
 -(IBAction)buttonReturnClick:(id)sender {
-//    [self.handWritingController insertReturnWord];
+    [self.handWritingController finishWriting];
     [self.textView insertText:@"\n"];
 }
 
@@ -214,10 +248,6 @@
         [[self.textView textStorage] replaceCharactersInRange:self.textView.selectedRange withAttributedString:wordString];
         self.textView.selectedRange = NSMakeRange(originRange.location+1, 0);
     }
-    
-    if (word) {
-        [self.note addWordsObject:word];
-	}
 }
 
 - (void)handWritingController:(TNHandWritingController *)controller didModifyWord:(TNWord *)word

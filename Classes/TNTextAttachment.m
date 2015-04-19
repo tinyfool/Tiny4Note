@@ -30,4 +30,19 @@
     UIGraphicsEndImageContext();
     return image;
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [super encodeWithCoder:aCoder];
+    [aCoder encodeObject:self.word forKey:@"word"];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _word = [aDecoder decodeObjectForKey:@"word"];
+    }
+    return self;
+}
 @end
