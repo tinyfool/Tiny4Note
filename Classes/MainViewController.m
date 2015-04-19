@@ -11,31 +11,14 @@
 #import "Note.h"
 #import "TNNote.h"
 #import "TNNotePage.h"
+#import "TNTextAttachment.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) TNNote *nNote;
-
+@property (nonatomic, strong) TNTextAttachment *currentAttachment;
 @end
 
 @implementation MainViewController
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize note = _note;
-@synthesize paperImageView = _paperImageView;
-@synthesize coverImageView = _coverImageView;
-@synthesize noteView = _noteView;
-@synthesize nav = _nav;
-
-@synthesize popover = _popover;
-@synthesize writingWin1 = _writingWin1;
-@synthesize writingWin2 = _writingWin2;
-@synthesize handWritingController = _handWritingController;
-
-@synthesize toobarButtonChinese = _toobarButtonChinese;
-@synthesize toobarButtonEnglish = _toobarButtonEnglish;
-@synthesize toobarButtonSpace = _toobarButtonSpace;
-@synthesize toobarButtonCRLF = _toobarButtonCRLF;
-
-@synthesize startFrame = _startFrame;
 #pragma mark - 事件处理
 
 #pragma mark - 标准View处理
@@ -44,6 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.textView.allowsEditingTextAttributes = YES;
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    self.textView.attributedText = [[NSMutableAttributedString alloc] initWithString:@"" attributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:40]}];
+    
+    [self.writingInputView removeFromSuperview];
+    self.textView.inputView = self.writingInputView;
+    
 	self.writingWin1.layer.cornerRadius= 30.0f;
 	self.writingWin1.layer.masksToBounds = YES;
 	self.writingWin1.layer.borderWidth = 1.0;
@@ -59,22 +49,51 @@
     
     self.handWritingController.managedObjectContext = self.managedObjectContext;
     
-    TNNote *note = [[TNNote alloc] init];
-    note.words = [[self.note.words array] mutableCopy];
-    NSArray *pages = [note pagesWithSize:self.noteView.bounds.size];
-    TNNotePage *page = pages.count > 0 ? pages[0] : nil;
-    self.noteView.words = [page.words mutableCopy];
-}
+//    TNNote *note = [[TNNote alloc] init];
+//    note.words = [[self.note.words array] mutableCopy];
+//    NSArray *pages = [note pagesWithSize:self.noteView.bounds.size];
+//    TNNotePage *page = pages.count > 0 ? pages[0] : nil;
+//    self.noteView.words = [page.words mutableCopy];
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
+    UIView *inputAccessoryView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+    [inputAccessoryView setBackgroundColor:[UIColor grayColor]];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"keboard" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(changeKeyboard:) forControlEvents:UIControlEventTouchUpInside];
+    [button sizeToFit];
+    button.center = CGPointMake(button.bounds.size.width, button.bounds.size.height/2);
+    [inputAccessoryView addSubview:button];
+    
+    UIButton *dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [dismissButton setTitle:@"Dismiss" forState:UIControlStateNormal];
+    [dismissButton addTarget:self action:@selector(didPressedDismissButton:) forControlEvents:UIControlEventTouchUpInside];
+    [dismissButton sizeToFit];
+    dismissButton.center = CGPointMake(inputAccessoryView.bounds.size.width - dismissButton.bounds.size.width/2, dismissButton.bounds.size.height/2);
+    [inputAccessoryView addSubview:dismissButton];
+    self.textView.inputAccessoryView = inputAccessoryView;
     
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)didPressedDismissButton:(UIButton *)button
 {
-    [super viewDidAppear:animated];
+    [self.textView resignFirstResponder];
+}
+
+- (BOOL)isHandWritingKeyboard
+{
+    return self.textView.inputView != nil;
+}
+- (void)changeKeyboard:(UIButton *)sender
+{
+    [self.textView resignFirstResponder];
+
+    if ([self isHandWritingKeyboard]) {
+        self.textView.inputView = nil;
+    } else {
+        self.textView.inputView = self.writingInputView;
+    }
+    [self.textView becomeFirstResponder];
 }
 
 - (UIImage *)imageForViewController:(UIViewController *)vc
@@ -85,6 +104,11 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+- (UIRectEdge)edgesForExtendedLayout
+{
+    return UIRectEdgeNone;
 }
 
 - (void)didPressedBackButton:(id)sender
@@ -120,8 +144,6 @@
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	
-	[self.noteView setNeedsDisplay];
     return (interfaceOrientation == UIInterfaceOrientationPortrait || 
 			interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
@@ -149,42 +171,83 @@
 //点击回退键
 -(IBAction)buttonBackSpaceClick:(id)sender {
     
-//	[self.noteView backAWord];
     [self.handWritingController finishWriting];
-    [self.noteView removeLastWord];
+    [self.textView deleteBackward];
 }
 
 //点击空格键
 -(IBAction)buttonSpaceClick:(id)sender {
-    [self.handWritingController insertSpaceWord];
+    [self.textView insertText:@" "];
 }
 
 //点击回车键
 -(IBAction)buttonReturnClick:(id)sender {
-    [self.handWritingController insertReturnWord];
+//    [self.handWritingController insertReturnWord];
+    [self.textView insertText:@"\n"];
 }
 
 #pragma mark HandWritingController Delegate
 - (void)handWritingController:(TNHandWritingController *)controller didStartCreatingWord:(TNWord *)word
 {
     if (word) {
-		[self.noteView addWord:word];
+        TNTextAttachment *attachment = [[TNTextAttachment alloc] init];
+        attachment.word = word;
+        self.currentAttachment = attachment;
+        NSMutableAttributedString *wordString = [[NSAttributedString attributedStringWithAttachment:attachment] mutableCopy];
+        
+        NSRange originRange = self.textView.selectedRange;
+        
+        NSMutableDictionary *attributes = nil;
+        if (self.textView.textStorage.length == 0) {
+            attributes = [@{NSFontAttributeName:[UIFont systemFontOfSize:40]} mutableCopy];
+            
+        } else if (originRange.location == self.textView.textStorage.length) {
+            attributes = [[[self.textView textStorage] attributesAtIndex:originRange.location-1 effectiveRange:nil] mutableCopy];
+
+        } else {
+            attributes = [[[self.textView textStorage] attributesAtIndex:originRange.location effectiveRange:nil] mutableCopy];
+            
+        }
+        [attributes removeObjectForKey:NSAttachmentAttributeName];
+        [wordString addAttributes:attributes range:NSMakeRange(0, wordString.length)];
+        
+        [[self.textView textStorage] replaceCharactersInRange:self.textView.selectedRange withAttributedString:wordString];
+        self.textView.selectedRange = NSMakeRange(originRange.location+1, 0);
+    }
+    
+    if (word) {
         [self.note addWordsObject:word];
 	}
 }
 
 - (void)handWritingController:(TNHandWritingController *)controller didModifyWord:(TNWord *)word
 {
-    [self.noteView updateWord:word];
+
+    [self requestRedrawAttachment:self.currentAttachment];
+
+}
+
+- (void)requestRedrawAttachment:(id)attachment
+{
+    NSTextStorage *storage = self.textView.textStorage;
+    __block NSRange attachmentRange = NSMakeRange(NSNotFound, 0);
+    [storage enumerateAttribute:NSAttachmentAttributeName
+                        inRange:NSMakeRange(0, storage.length)
+                        options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
+                            if (value == attachment) {
+                                attachmentRange = range;
+                                *stop = YES;
+                            }
+                        }];
+    
+    if (attachmentRange.location != NSNotFound) {
+        [[self.textView layoutManager] invalidateDisplayForCharacterRange:attachmentRange];
+    }
 }
 
 - (void)handWritingController:(TNHandWritingController *)controller didFinishWord:(TNWord *)word
 {
-    
-    if (word && word.wordType != WordTypeNormal) {
-        [self.noteView addWord:word];
-        
-    }
-    
+    [self requestRedrawAttachment:self.currentAttachment];
+    self.currentAttachment = nil;
 }
 @end

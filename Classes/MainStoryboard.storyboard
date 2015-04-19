@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BT2-VZ-IWd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="6254" systemVersion="14D131" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" promptedForUpgradeToXcode5="NO" initialViewController="BT2-VZ-IWd">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment identifier="iOS"/>
+        <development version="4600" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Bookshelf View Controller-->
         <scene sceneID="IJj-b3-DXT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U2w-K6-oNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="8Kr-Z0-9Zs" customClass="BookshelfViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="n8V-DG-Ynb">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -70,13 +69,13 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2w-K6-oNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="993" y="-281"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="GtE-CQ-u77">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-qZ-gxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="8Lo-Qc-apk" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dno-Kj-hj0">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -90,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="14" width="748" height="932"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <view opaque="NO" contentMode="scaleToFill" id="CeL-Rv-5XC" customClass="NoteView">
+                            <view opaque="NO" contentMode="scaleToFill" id="CeL-Rv-5XC" customClass="UITextView">
                                 <rect key="frame" x="48" y="64" width="672" height="922"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.90588241820000004" green="0.88235300780000003" blue="0.85098046059999999" alpha="0.0" colorSpace="deviceRGB"/>
@@ -154,17 +153,19 @@
                     <connections>
                         <outlet property="coverImageView" destination="FmW-O4-qJu" id="yDW-3g-Ed7"/>
                         <outlet property="handWritingController" destination="ku7-4O-Jzh" id="Ibr-WE-lFH"/>
-                        <outlet property="noteView" destination="CeL-Rv-5XC" id="ctH-6h-seO"/>
                         <outlet property="paperImageView" destination="gHm-So-lA0" id="jol-PK-c1h"/>
+                        <outlet property="textView" destination="CeL-Rv-5XC" id="0HR-C8-78N"/>
                         <outlet property="toobarButtonCRLF" destination="Y7Q-JC-hSu" id="5vy-ZY-9nO"/>
                         <outlet property="toobarButtonChinese" destination="y6z-Ee-cNg" id="96K-fm-GJk"/>
                         <outlet property="toobarButtonEnglish" destination="3KW-r9-hN5" id="ctZ-xG-O7g"/>
                         <outlet property="toobarButtonSpace" destination="gvz-Vy-ZWA" id="KXc-VF-s2h"/>
                         <outlet property="view" destination="dno-Kj-hj0" id="boD-lI-t8t"/>
+                        <outlet property="writingInputView" destination="cvh-3Y-4Bj" id="7Sp-pz-EQd"/>
                         <outlet property="writingWin1" destination="vfR-R2-bOg" id="KEN-wE-mA4"/>
                         <outlet property="writingWin2" destination="ldu-1D-WEq" id="evc-Wi-bfa"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Shq-qZ-gxf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="ku7-4O-Jzh" customClass="TNHandWritingController">
                     <connections>
                         <outlet property="delegate" destination="8Lo-Qc-apk" id="i8I-Lj-1T7"/>
@@ -178,7 +179,6 @@
         <!--Navigation Controller-->
         <scene sceneID="oVA-E3-Sh5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rjy-C0-Mxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="BT2-VZ-IWd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="29o-Lc-dCT">
@@ -191,6 +191,7 @@
                         <segue destination="8Kr-Z0-9Zs" kind="relationship" relationship="rootViewController" id="mHA-QA-zvC"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rjy-C0-Mxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="19" y="-281"/>
         </scene>
@@ -199,59 +200,6 @@
         <image name="Cover_Doodle_2.png" width="768" height="1024"/>
         <image name="Paper_Doodle_1.png" width="756" height="974"/>
     </resources>
-    <classes>
-        <class className="BookshelfViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BookshelfViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="didPressedNewButton:"/>
-            </relationships>
-        </class>
-        <class className="ImageBackgroundNavigationBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageBackgroundNavigationBar.h"/>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addNote:"/>
-                <relationship kind="action" name="buttonBackSpaceClick:"/>
-                <relationship kind="action" name="buttonInputClick:"/>
-                <relationship kind="action" name="buttonReturnClick:"/>
-                <relationship kind="action" name="buttonSpaceClick:"/>
-                <relationship kind="action" name="showNotes:"/>
-                <relationship kind="outlet" name="coverImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="handWritingController" candidateClass="TNHandWritingController"/>
-                <relationship kind="outlet" name="nav" candidateClass="ImageBackgroundNavigationBar"/>
-                <relationship kind="outlet" name="noteView" candidateClass="TNNoteView"/>
-                <relationship kind="outlet" name="paperImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="toobarButtonCRLF" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toobarButtonChinese" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toobarButtonEnglish" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toobarButtonSpace" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="writingWin1" candidateClass="TNHandWritingView"/>
-                <relationship kind="outlet" name="writingWin2" candidateClass="TNHandWritingView"/>
-            </relationships>
-        </class>
-        <class className="NoteView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteView.h"/>
-        </class>
-        <class className="TNHandWritingController" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TNHandWritingController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="delegate"/>
-                <relationship kind="outlet" name="writingWin1" candidateClass="TNHandWritingView"/>
-                <relationship kind="outlet" name="writingWin2" candidateClass="TNHandWritingView"/>
-            </relationships>
-        </class>
-        <class className="TNHandWritingView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TNHandWritingView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="TNNoteView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TNNoteView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -23,7 +23,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *paperImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
-@property (nonatomic, strong) IBOutlet NoteView *noteView;
+@property (nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, strong) IBOutlet ImageBackgroundNavigationBar *nav;
 
 @property (nonatomic,retain) UIPopoverController* popover;
@@ -31,6 +31,8 @@
 @property (nonatomic, strong) IBOutlet TNHandWritingView *writingWin1;
 @property (nonatomic, strong) IBOutlet TNHandWritingView *writingWin2;
 @property (nonatomic, strong) IBOutlet TNHandWritingController *handWritingController;
+@property (nonatomic, strong) IBOutlet UIView *writingInputView;
+
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonChinese;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *toobarButtonEnglish;

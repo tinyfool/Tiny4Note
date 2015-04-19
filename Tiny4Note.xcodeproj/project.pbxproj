@@ -18,6 +18,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D7ACF80DDB3853001CB0EB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MainViewController.m */; };
+		432D2BF51AE3C4B0004CC2DD /* TNTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 432D2BF41AE3C4B0004CC2DD /* TNTextAttachment.m */; };
 		437BA46C153940EC00648AFC /* Paper_Simple_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 437BA462153940EC00648AFC /* Paper_Simple_1.png */; };
 		437BA46D153940EC00648AFC /* Paper_Simple_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 437BA463153940EC00648AFC /* Paper_Simple_1@2x.png */; };
 		437BA46E153940EC00648AFC /* Paper_Simple_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 437BA464153940EC00648AFC /* Paper_Simple_2.png */; };
@@ -126,6 +127,8 @@
 		28D7ACF70DDB3853001CB0EB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Tiny4Note_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tiny4Note_Prefix.pch; sourceTree = "<group>"; };
+		432D2BF31AE3C4B0004CC2DD /* TNTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNTextAttachment.h; path = Classes/TNTextAttachment.h; sourceTree = "<group>"; };
+		432D2BF41AE3C4B0004CC2DD /* TNTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNTextAttachment.m; path = Classes/TNTextAttachment.m; sourceTree = "<group>"; };
 		437BA462153940EC00648AFC /* Paper_Simple_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Paper_Simple_1.png; path = Images/Paper_Simple_1.png; sourceTree = "<group>"; };
 		437BA463153940EC00648AFC /* Paper_Simple_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Paper_Simple_1@2x.png"; path = "Images/Paper_Simple_1@2x.png"; sourceTree = "<group>"; };
 		437BA464153940EC00648AFC /* Paper_Simple_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Paper_Simple_2.png; path = Images/Paper_Simple_2.png; sourceTree = "<group>"; };
@@ -485,6 +488,8 @@
 				43F2AE991694B13700667AAF /* TNNote.m */,
 				43F2AE9B1694B43800667AAF /* TNNotePage.h */,
 				43F2AE9C1694B43800667AAF /* TNNotePage.m */,
+				432D2BF31AE3C4B0004CC2DD /* TNTextAttachment.h */,
+				432D2BF41AE3C4B0004CC2DD /* TNTextAttachment.m */,
 			);
 			name = TNEngine;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				BD8AC7A014A65B3600E65AA7 /* Tiny4NotePopoverBackgroundView.m in Sources */,
 				BD8AC7A314A6657200E65AA7 /* NoteTableVIewController.m in Sources */,
 				437F5F51153408C700A0228F /* TNHandWritingController.m in Sources */,
+				432D2BF51AE3C4B0004CC2DD /* TNTextAttachment.m in Sources */,
 				437F5FAF153724CB00A0228F /* BookshelfViewController.m in Sources */,
 				437F5FB2153726C200A0228F /* PageSegue.m in Sources */,
 				437BA504153C019A00648AFC /* Note+Methods.m in Sources */,
