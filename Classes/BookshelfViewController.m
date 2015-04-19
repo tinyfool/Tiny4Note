@@ -141,16 +141,7 @@
     Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
     note.createtime = [NSDate date];
     note.updatetime = [NSDate date];
-    
-    int i = arc4random() % 5 + 1;
-    int j = arc4random() % 5 + 1;
-    BOOL isSimpleCover = (arc4random() % 2) == 1;
-    BOOL isSimplePaper = (arc4random() % 2) == 1;
-    
-    note.coverName = [NSString stringWithFormat:@"Cover_%@_%i",isSimpleCover ? @"Simple" : @"Doodle",i];
-    note.paperName = [NSString stringWithFormat:@"Paper_%@_%i",isSimplePaper ? @"Simple" : @"Doodle",j];
-    note.name = [NSString stringWithFormat:@"New Note_%i_%i",i,j];
-    
+        
     [self performSegueWithIdentifier:@"smallCell" sender:note];
     
 //    for (int i = 1; i<6; i++) {

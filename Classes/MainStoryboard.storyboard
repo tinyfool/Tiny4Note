@@ -87,14 +87,6 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Cover_Doodle_2.png" id="FmW-O4-qJu">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Paper_Doodle_1.png" id="gHm-So-lA0">
-                                <rect key="frame" x="0.0" y="14" width="748" height="932"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <view opaque="NO" contentMode="scaleToFill" id="CeL-Rv-5XC" customClass="UITextView">
                                 <rect key="frame" x="48" y="64" width="672" height="922"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,9 +150,7 @@
                     <navigationItem key="navigationItem" id="kWr-Jo-dsR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="coverImageView" destination="FmW-O4-qJu" id="yDW-3g-Ed7"/>
                         <outlet property="handWritingController" destination="ku7-4O-Jzh" id="Ibr-WE-lFH"/>
-                        <outlet property="paperImageView" destination="gHm-So-lA0" id="jol-PK-c1h"/>
                         <outlet property="textView" destination="CeL-Rv-5XC" id="0HR-C8-78N"/>
                         <outlet property="toobarButtonCRLF" destination="Y7Q-JC-hSu" id="5vy-ZY-9nO"/>
                         <outlet property="toobarButtonChinese" destination="y6z-Ee-cNg" id="96K-fm-GJk"/>
@@ -203,10 +193,6 @@
             <point key="canvasLocation" x="19" y="-281"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Cover_Doodle_2.png" width="768" height="1024"/>
-        <image name="Paper_Doodle_1.png" width="756" height="974"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

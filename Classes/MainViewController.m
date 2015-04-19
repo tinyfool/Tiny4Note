@@ -38,13 +38,7 @@
 	self.writingWin2.layer.borderWidth = 1.0;
 //    self.nav.backgroundImage = [UIImage imageNamed:@"toolbar.png"];
 //    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(didPressedBackButton:)];
-    
-    self.paperImageView.image = [UIImage imageNamed:[self.note.paperName stringByAppendingString:@".png"]];
-    self.coverImageView.image = [UIImage imageNamed:[self.note.coverName stringByAppendingString:@".png"]];
-    self.coverImageView.frame = self.view.bounds;
-//    self.paperImageView.image = nil;
-//    self.coverImageView.image = nil;
-    
+        
     NSData *contents = self.note.contents;
     if (contents) {
         NSAttributedString *att = [NSKeyedUnarchiver unarchiveObjectWithData:contents];
