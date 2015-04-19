@@ -7,7 +7,10 @@
 //
 
 #import "TNHandWritingView.h"
-
+@interface TNHandWritingView()
+@property (nonatomic, strong) UIBezierPath *path;
+@property (nonatomic, strong, readonly) CAShapeLayer *shapeLayer;
+@end
 @implementation TNHandWritingView
 
 - (id)initWithFrame:(CGRect)frame {
@@ -15,8 +18,23 @@
     if ((self = [super initWithFrame:frame])) {
 	
 		_lines = [[NSMutableArray alloc] initWithCapacity:100];
+        _path = [[UIBezierPath alloc] init];
+        CAShapeLayer *shape = self.shapeLayer;
+        shape.strokeColor = [UIColor redColor].CGColor;
+        shape.fillColor = NULL;
+
     }
     return self;
+}
+
++ (Class)layerClass
+{
+    return [CAShapeLayer class];
+}
+
+- (CAShapeLayer *)shapeLayer
+{
+    return (CAShapeLayer *)self.layer;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -24,42 +42,30 @@
 	if ((self = [super initWithCoder:aDecoder])) {
 		
 		_lines = [[NSMutableArray alloc] initWithCapacity:100];
+        _path = [[UIBezierPath alloc] init];
+        CAShapeLayer *shape = self.shapeLayer;
+        shape.strokeColor = [UIColor redColor].CGColor;
+        shape.fillColor = NULL;
+        shape.lineWidth = 10;
+        shape.lineCap = kCALineCapRound;
+        shape.shadowOffset = CGSizeMake(5, 5);
+        shape.shadowRadius = 5;
+    
 	}
 	return self;
+}
+
+- (void)updatePath
+{
+    self.shapeLayer.path = _path.CGPath;
 }
 
 - (void)clean
 {
     self.lines = [[NSMutableArray alloc] initWithCapacity:100];
+    [_path removeAllPoints];
+    [self updatePath];
     [self setNeedsDisplay];
-}
-
-- (void)drawRect:(CGRect)rect {
-    
-	CGContextRef ctx=UIGraphicsGetCurrentContext();
-	[[UIColor redColor] set];
-	CGContextSetRGBStrokeColor(ctx,1,0,0,1);
-	CGContextSetLineWidth(ctx,10);
-	CGContextSetLineCap(ctx,kCGLineCapRound);
-	CGContextSetShadow(ctx,CGSizeMake(5, 5),5);
-	CGContextSetShouldAntialias(ctx,YES);
-	for (int i =0 ; i < [self.lines count]; i++) {
-		
-		NSArray* cline = [self.lines objectAtIndex:i];
-		int o = 0;
-		for (int j=0; j<[cline count]; j++) {
-			CGPoint point = [[cline objectAtIndex:j] CGPointValue];
-			if (o == 0) {
-				CGContextMoveToPoint(ctx,point.x,point.y);
-				if([cline count]==1)
-					CGContextAddLineToPoint(ctx, point.x, point.y);
-				o = 1;
-			}else {
-				CGContextAddLineToPoint(ctx, point.x, point.y);
-			}
-		}
-	}
-	CGContextStrokePath(ctx);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -69,6 +75,9 @@
 	UITouch* touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self];
 	[self.currentLine addObject:[NSValue valueWithCGPoint:point]];
+    
+    [_path moveToPoint:point];
+
 	[self.delegate handWritingViewDidStartWriting:self];
 }
 
@@ -77,7 +86,11 @@
 	UITouch* touch = [touches anyObject];
 	CGPoint point = [touch locationInView:self];
 	[self.currentLine addObject:[NSValue valueWithCGPoint:point]];
+    
+    [_path addLineToPoint:point];
+    
     [self.delegate handWritingViewDidWriting:self];
+    [self updatePath];
 	[self setNeedsDisplay];
 }
 
@@ -86,7 +99,9 @@
 	CGPoint point = [touch locationInView:self];
 	[self.currentLine addObject:[NSValue valueWithCGPoint:point]];
 
+    [_path addLineToPoint:point];
     [self.delegate handWritingViewDidEndWriting:self];
+    [self updatePath];
     [self setNeedsDisplay];
 } 
 
