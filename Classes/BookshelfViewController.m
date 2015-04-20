@@ -15,18 +15,6 @@
 @end
 
 @implementation BookshelfViewController
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize fetchedResultsController = _fetchedResultsController;
-
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -37,11 +25,8 @@
     self.dateFormatter = formatter;
     
     self.title = @"Notes";
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Note"];
     // Configure the request's entity, and optionally its predicate.
@@ -56,15 +41,10 @@
     
     __autoreleasing NSError *error;
     BOOL success = [controller performFetch:&error];
+    if (!success) {
+        NSLog(@"performFetch:%@",[error localizedDescription]);
+    }
     self.fetchedResultsController = controller;
-
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -75,8 +55,14 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return YES;
+    return !UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationPortraitUpsideDown;
+}
+
 
 #pragma mark -
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -131,11 +117,6 @@
 }
 
 #pragma mark - Table view delegate
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//}
 
 - (IBAction)didPressedNewButton:(id)sender {
     Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.managedObjectContext];
