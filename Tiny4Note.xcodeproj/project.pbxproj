@@ -14,6 +14,7 @@
 		15154C38120E905A0087A877 /* GWLPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 15154C37120E905A0087A877 /* GWLPage.m */; };
 		155E19CE1346CA7F00F2322F /* GWLRun.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CA1346CA7F00F2322F /* GWLRun.m */; };
 		155E19CF1346CA7F00F2322F /* GWLPostion.m in Sources */ = {isa = PBXBuildFile; fileRef = 155E19CC1346CA7F00F2322F /* GWLPostion.m */; };
+		156A2A5C2379C9C40036CF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 156A2A5B2379C9C40036CF20 /* Assets.xcassets */; };
 		15D6096D120A6E3A006D2D77 /* TNHandWritingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */; };
 		15D60985120A7F49006D2D77 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15D60984120A7F49006D2D77 /* back1.png */; };
 		15D60996120A830F006D2D77 /* TNNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D60995120A830F006D2D77 /* TNNoteView.m */; };
@@ -56,6 +57,7 @@
 		155E19CC1346CA7F00F2322F /* GWLPostion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWLPostion.m; path = Classes/GWLPostion.m; sourceTree = "<group>"; };
 		155E19CD1346CA7F00F2322F /* GWLPostion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWLPostion.h; path = Classes/GWLPostion.h; sourceTree = "<group>"; };
 		155E19D01346CA8800F2322F /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = common.h; path = Classes/common.h; sourceTree = "<group>"; };
+		156A2A5B2379C9C40036CF20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15D6096B120A6E3A006D2D77 /* TNHandWritingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TNHandWritingView.m; path = Classes/TNHandWritingView.m; sourceTree = "<group>"; };
 		15D6096C120A6E3A006D2D77 /* TNHandWritingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TNHandWritingView.h; path = Classes/TNHandWritingView.h; sourceTree = "<group>"; };
 		15D60984120A7F49006D2D77 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				2899E5210DE3E06400AC0155 /* MainViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Tiny4Note-Info.plist */,
+				156A2A5B2379C9C40036CF20 /* Assets.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				15D60985120A7F49006D2D77 /* back1.png in Resources */,
 				BDD5BE04127FF48500EF852B /* sf.png in Resources */,
 				1500D3C9128134FF00F2C0F9 /* input.png in Resources */,
+				156A2A5C2379C9C40036CF20 /* Assets.xcassets in Resources */,
 				1500D3CA128134FF00F2C0F9 /* input0.png in Resources */,
 				BD3590C212904FC0007B19CD /* 项目文档.pages in Resources */,
 				BDBEAA15133D7F0B001623A0 /* toolbar.png in Resources */,
@@ -348,8 +352,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BMC43J69VA;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -362,6 +369,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = Tiny4Note;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -369,8 +377,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BMC43J69VA;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tiny4Note_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -381,6 +392,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = Tiny4Note;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

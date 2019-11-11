@@ -29,6 +29,7 @@
         <viewController nibName="MainViewController" id="7" customClass="MainViewController">
             <extendedEdge key="edgesForExtendedLayout"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+            <point key="canvasLocation" x="9" y="-584"/>
         </viewController>
     </objects>
 </document>
