@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,7 +36,6 @@
 		BDBEAA15133D7F0B001623A0 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = BDBEAA14133D7F0B001623A0 /* toolbar.png */; };
 		BDBEAA21133D8568001623A0 /* ImageBackgroundNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBEAA20133D8568001623A0 /* ImageBackgroundNavigationBar.m */; };
 		BDD5BE04127FF48500EF852B /* sf.png in Resources */ = {isa = PBXBuildFile; fileRef = BDD5BE03127FF48500EF852B /* sf.png */; };
-		BDDBEEE614A60F67008FD0BE /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEE514A60F67008FD0BE /* libMobClickLibrary.a */; };
 		BDDBEEEA14A60F8D008FD0BE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEE914A60F8D008FD0BE /* CoreTelephony.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BDDBEEEC14A60FB2008FD0BE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEEB14A60FB2008FD0BE /* libz.dylib */; };
 		BDDBEEEE14A60FC0008FD0BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDDBEEED14A60FC0008FD0BE /* SystemConfiguration.framework */; };
@@ -92,7 +91,6 @@
 		BDBEAA1D133D84F4001623A0 /* ImageBackgroundNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageBackgroundNavigationBar.h; path = Classes/ImageBackgroundNavigationBar.h; sourceTree = "<group>"; };
 		BDBEAA20133D8568001623A0 /* ImageBackgroundNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageBackgroundNavigationBar.m; path = Classes/ImageBackgroundNavigationBar.m; sourceTree = "<group>"; };
 		BDD5BE03127FF48500EF852B /* sf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sf.png; sourceTree = "<group>"; };
-		BDDBEEE514A60F67008FD0BE /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = youmeng/libMobClickLibrary.a; sourceTree = "<group>"; };
 		BDDBEEE814A60F6F008FD0BE /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobClick.h; path = youmeng/MobClick.h; sourceTree = "<group>"; };
 		BDDBEEE914A60F8D008FD0BE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BDDBEEEB14A60FB2008FD0BE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -114,7 +112,6 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				BDDBEEE614A60F67008FD0BE /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +215,6 @@
 				BDDBEEED14A60FC0008FD0BE /* SystemConfiguration.framework */,
 				BDDBEEEB14A60FB2008FD0BE /* libz.dylib */,
 				BDDBEEE914A60F8D008FD0BE /* CoreTelephony.framework */,
-				BDDBEEE514A60F67008FD0BE /* libMobClickLibrary.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -283,7 +279,7 @@
 				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Tiny4Note" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -353,6 +349,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -363,6 +360,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/youmeng\"",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = Tiny4Note;
 			};
 			name = Debug;
@@ -372,6 +370,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Tiny4Note_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -380,6 +379,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/youmeng\"",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_NAME = Tiny4Note;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -388,8 +388,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"ARCHS[sdk=iphoneos*]" = armv7;
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"ARCHS[sdk=iphonesimulator13.1]" = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hao peiqiang (TGTAME77Z5)";
@@ -397,7 +396,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "11461F76-9E8B-43E1-BE1B-18564F46FAC0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -407,8 +406,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"ARCHS[sdk=iphoneos*]" = armv7;
-				"ARCHS[sdk=iphonesimulator*]" = i386;
+				"ARCHS[sdk=iphonesimulator13.1]" = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: hao peiqiang (TGTAME77Z5)";
@@ -416,7 +414,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "872D15F2-4E4E-4F3C-A34B-C855632E69EB";
 				SDKROOT = iphoneos;

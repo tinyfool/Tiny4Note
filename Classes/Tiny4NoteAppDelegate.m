@@ -18,7 +18,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     [self initNotebook];
-    [MobClick setDelegate:self reportPolicy:BATCH];
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 	return YES;

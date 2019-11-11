@@ -44,3 +44,5 @@ Backup[ ]of[ ]*.numbers/
 
 # CocoaPods
 Pods/*
+
+DerivedData

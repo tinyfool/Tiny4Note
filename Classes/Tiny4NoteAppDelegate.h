@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "MobClick.h"
 
 @class MainViewController;
 
-@interface Tiny4NoteAppDelegate : NSObject <UIApplicationDelegate,MobClickDelegate> {
+@interface Tiny4NoteAppDelegate : NSObject <UIApplicationDelegate> {
 
     UIWindow *window;
     MainViewController *viewController;
